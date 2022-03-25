@@ -1,0 +1,2 @@
+module Cursos::FichasHelper
+end

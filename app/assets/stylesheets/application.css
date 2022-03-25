@@ -1,0 +1,82 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ #menu{
+    background-color: rgb(255, 255, 255);
+    color: rgb(155, 155, 155);
+    height: 415px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    border: 1px solid black;
+    box-shadow:2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    
+    
+}
+#menu header{
+    background-color: white;
+    color: orange;
+    text-align: center;
+    border: 1px solid orange;
+    font-size: 20px;
+    border-top-left-radius : 20px;
+    border-top-right-radius: 20px ;
+}
+.dere ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    margin-right: 30px;
+    margin-top: 30px;
+    
+}
+.dere li{
+    text-decoration: none;
+    color: #000;
+    font-size: 25px;
+    margin-top: 30px;
+    border-bottom: 1px solid black ;
+    padding-bottom:10px;
+    
+}
+.bar{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+
+}
+
+.izq table{
+    width: 100%;
+    border: 1px solid black;
+    text-align: left;
+    border-collapse: collapse;
+    caption-side: top;
+    font-size: 20px;
+    
+}
+.izq .odd{
+    background-color: rgb(253, 171, 18);
+    text-align: center;
+}
+.izq td{
+    border: 1px solid black;
+
+}

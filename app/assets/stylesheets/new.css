@@ -1,0 +1,90 @@
+.login{
+   margin: 0;
+   padding: 20px;
+   display: flex;
+   background: url("https://d2yoo3qu6vrk5d.cloudfront.net/images/20210628102810/estudiantes-del-sena.jpeg") ;
+   background-size: cover;
+   font-family: sans-serif;
+}
+.dere{
+   width: 320px;
+   height: 420px;
+   background: rgb(255, 255, 255);
+   color: rgb(0, 0, 0);
+   text-align: center;
+   border-radius: 20px;
+   position: absolute;
+   top: 20%;
+   left: 7%;
+   opacity: 0.9;
+   box-shadow: 3px 3px 5px rgb(66, 66, 66);
+
+}
+
+.field{
+   margin-top: 20px;
+   font-weight: bold;
+   display: block;
+}
+
+.in{
+   margin: 2px;
+   border: none;
+   border-bottom: 1px solid #000;
+   background: transparent;
+   outline: none;
+   height: 40px;
+   font-size: 16px;
+
+}
+.bo{
+   margin-top: 20px;
+   margin-bottom: 20px;
+   border: none;
+   outline: none;
+   height: 40px;
+   width: 100px;
+   background: rgb(245, 148, 23);
+   border-radius: 20px;
+   color: white;
+}
+
+.sub{
+   text-decoration: none;
+   font-size: 12px;
+   line-height: 20px;
+
+}
+.izq{
+   width: 450px;
+   height: 350px;
+   background: rgb(255, 255, 255);
+   color: rgb(0, 0, 0);
+   text-align: center;
+   border-radius: 20px;
+   position: absolute;
+   top: 25%;
+   right: 10%;
+   box-shadow: 3px 3px 5px rgb(66, 66, 66);
+   padding: 10px;
+}
+.izq img{
+   border-radius: 20px;
+}
+
+.izq2{
+   width: 220px;
+   height: 250px;
+   background: rgb(255, 255, 255);
+   color: rgb(0, 0, 0);
+   border-radius: 20px;
+   position: absolute;
+   top: 25%;
+   right: 10%;
+   box-shadow: 3px 3px 5px rgb(66, 66, 66);
+   padding: 10px;
+   align-items: center;
+}
+.izq2 img{
+   border-radius: 20px;
+}

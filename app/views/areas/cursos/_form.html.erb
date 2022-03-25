@@ -1,0 +1,6 @@
+<%= form_for [@area, @curso] do |f| %>
+    <div class="field">
+        <%= f.text_field :nombre_curso, placeholder:"ingrese nombre del area", class:"in"  ,required:"true"%>
+    </div>
+    <%= f.submit "Guardar", class:"bo" %> 
+<% end %>
