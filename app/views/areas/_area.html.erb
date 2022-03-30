@@ -1,10 +1,8 @@
+
 <tr>
   <td>
     <%= link_to area.nombre, area_cursos_url(area), class:"noblue" %>
-    
-  </td>
-  <td>
-    <%= link_to 'Borrar', { :action => :destroy, :id => area.id }, :method => :delete, :data => { :confirm => '¿Estás seguro?' }, class:"noblue" %>
-    <%= link_to "agregar area", new_area_curso_url(area), class:"noblue" %>
-  </td>
+  </td>  
+
+
 </tr>

@@ -17,6 +17,11 @@ before_action :set_area
       render :new
     end
   end
+  def destroy
+    @curso = @area.cursos.find(params[:id]).destroy
+    redirect_to areas_path
+  end
+  
   private 
     def set_area
       @area = Area.find(params[:area_id])
