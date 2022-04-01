@@ -2,4 +2,7 @@
         <td>
             <%= link_to curso.nombre_curso, area_cursos_url(curso), class:"noblue"%>
         </td>
+        <td>
+            <%=button_to 'Borrar area', area_cursos_url(curso.id), method: :delete, form: {data: {turbo_confirm: '¿Estás seguro?' }}, class:"button" %>
+        </td>
     </tr>     
