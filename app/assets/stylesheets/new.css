@@ -99,3 +99,14 @@
    display: inline-block;
    font-size: 16px;
 }
+.button2 {
+   background-color: #ffc400; /* Green */
+   border: none;
+   border-radius: 10px;
+   color: white;
+   padding: 7px 4px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+}

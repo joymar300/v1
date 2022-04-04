@@ -1,0 +1,7 @@
+<%= form_with model: @area do |form| %>
+    <div class="field">
+  <%= form.text_field :nombre, placeholder: "name", class:"in"  %>
+  </div>
+  
+  <%= form.submit "guardar", class:"bo" %>
+<% end %>
