@@ -21,8 +21,14 @@ before_action :delet_area
   end
 
   def destroy
-    @curso = @aread.cursos.find(params[:id]).destroy
-    redirect_to areas_path
+    @curso = @area.cursos.find(params[:id])
+    if @curso.destroy
+      flash[:notice] = "Proceso ok"
+      redirect_to area_cursos_url
+    else
+      flash[:alert] = "No se pudo borrar"
+      
+    end
   end
 
   def edit
@@ -32,8 +38,8 @@ before_action :delet_area
 
   def update
     @curso = @area.cursos.find(params[:id])
-    if @area.update(curso_params_update)
-      redirect_to areas_cursos_path
+    if @curso.update(curso_params_update)
+      redirect_to area_cursos_url
     else
         render :edit
     end

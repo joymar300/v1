@@ -1,9 +1,12 @@
 <tr>
     <td>
-        <%= link_to curso.nombre_curso, area_cursos_url(curso), class:"noblue"%>
+        <%= link_to curso.nombre_curso, area_curso_path(@area, curso), class:"noblue"%>
     </td>
     <td>
-        <%=link_to 'Borrar area', area_cursos_url(curso), method: :delete, form: {data: {turbo_confirm: '¿Estás seguro?' }}, class:"button" %>
+        <%=button_to 'Borrar curso', area_curso_path(@area, curso), method: :delete, form: {data: {turbo_confirm: '¿Estás seguro?' }}, class:"button" %>
     </td>
-
+        <td>
+        <%=link_to 'editar', edit_area_curso_path(@area, curso), class:"button2" %>
+    </td>
+    
 </tr>     
