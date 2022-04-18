@@ -33595,3 +33595,2954 @@ Processing by AreasController#index as HTML
 Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 1.2ms | Allocations: 3716)
 
 
+Started GET "/" for ::1 at 2022-04-12 20:59:08 -0500
+  [1m[35m (14.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 72ms (ActiveRecord: 0.0ms | Allocations: 3388)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-04-12 20:59:09 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/devise.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise
+  Rendered devise/shared/_links.html.erb (Duration: 30.6ms | Allocations: 672)
+  Rendered devise/sessions/new.html.erb within layouts/devise (Duration: 168.7ms | Allocations: 4533)
+  Rendered layout layouts/devise.html.erb (Duration: 804.9ms | Allocations: 38786)
+Completed 200 OK in 1045ms (Views: 1000.5ms | ActiveRecord: 3.2ms | Allocations: 48083)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-04-12 20:59:16 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"joymar300@hotmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "joymar300@hotmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 358ms (ActiveRecord: 0.3ms | Allocations: 7316)
+
+
+Started GET "/" for ::1 at 2022-04-12 20:59:16 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_izq.html.erb (Duration: 7.0ms | Allocations: 215)
+  Rendered home/index.html.erb within layouts/application (Duration: 22.8ms | Allocations: 688)
+  Rendered layout layouts/application.html.erb (Duration: 33.4ms | Allocations: 2325)
+Completed 200 OK in 44ms (Views: 39.1ms | ActiveRecord: 0.3ms | Allocations: 4638)
+
+
+Started GET "/areas" for ::1 at 2022-04-12 20:59:19 -0500
+Processing by AreasController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering areas/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 5.6ms | Allocations: 216)
+  Rendered shared/_izq.html.erb (Duration: 0.2ms | Allocations: 78)
+  [1m[36mArea Load (0.3ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  ↳ app/views/shared/_areas.html.erb:9
+  Rendered collection of areas/_area.html.erb [3 times] (Duration: 0.8ms | Allocations: 494)
+  Rendered shared/_areas.html.erb (Duration: 12.7ms | Allocations: 3590)
+  Rendered areas/index.html.erb within layouts/application (Duration: 25.8ms | Allocations: 4401)
+  Rendered layout layouts/application.html.erb (Duration: 32.5ms | Allocations: 5985)
+Completed 200 OK in 98ms (Views: 36.5ms | ActiveRecord: 1.1ms | Allocations: 8169)
+
+
+Started GET "/areas/7/cursos" for ::1 at 2022-04-12 20:59:21 -0500
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.3ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:51:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.2ms | Allocations: 107)
+  Rendered shared/_izq2.html.erb (Duration: 9.4ms | Allocations: 686)
+  [1m[36mCurso Load (0.3ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ?[0m  [["area_id", 7]]
+  ↳ app/views/shared/_cursos.html.erb:6
+  Rendered collection of areas/cursos/_curso.html.erb [2 times] (Duration: 4.7ms | Allocations: 770)
+  Rendered shared/_cursos.html.erb (Duration: 76.9ms | Allocations: 7606)
+  Rendered areas/cursos/index.html.erb within layouts/application (Duration: 94.3ms | Allocations: 8913)
+  Rendered layout layouts/application.html.erb (Duration: 99.0ms | Allocations: 10220)
+Completed 200 OK in 209ms (Views: 101.3ms | ActiveRecord: 2.2ms | Allocations: 16779)
+
+
+Started GET "/areas/7/cursos/11" for ::1 at 2022-04-12 20:59:22 -0500
+Processing by Areas::CursosController#show as HTML
+  Parameters: {"area_id"=>"7", "id"=>"11"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:51:in `set_area'
+  [1m[36mCurso Load (0.4ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ? AND "cursos"."id" = ? LIMIT ?[0m  [["area_id", 7], ["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/show.html.erb within layouts/application
+  Rendered areas/cursos/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 98)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 1445)
+Completed 200 OK in 14ms (Views: 6.4ms | ActiveRecord: 0.5ms | Allocations: 3328)
+
+
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mCurso Load (0.2ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  [1m[36mCurso Load (0.5ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" ORDER BY "cursos"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCurso Load (0.2ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" ORDER BY "cursos"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateFichas (20220413020959)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "fichas" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "num_ficha" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220413020959"]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CursoFicha (20220413021137)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220413021137"]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mCurso Load (2.0ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" ORDER BY "cursos"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mCurso Load (0.4ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" ORDER BY "cursos"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCursoFichas (20220413023616)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "curso_fichas" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "curso_id" integer NOT NULL, "ficha_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_a35e91ccf2"
+FOREIGN KEY ("curso_id")
+  REFERENCES "cursos" ("id")
+, CONSTRAINT "fk_rails_ab3fa125a8"
+FOREIGN KEY ("ficha_id")
+  REFERENCES "fichas" ("id")
+)[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE INDEX "index_curso_fichas_on_curso_id" ON "curso_fichas" ("curso_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_curso_fichas_on_ficha_id" ON "curso_fichas" ("ficha_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220413023616"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mCurso Load (0.3ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" ORDER BY "cursos"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mCurso Load (0.3ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" ORDER BY "cursos"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFicha Create (7.0ms)[0m  [1m[32mINSERT INTO "fichas" ("num_ficha", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["num_ficha", 123456], ["created_at", "2022-04-13 02:51:10.671005"], ["updated_at", "2022-04-13 02:51:10.671005"]]
+  [1m[36mCursoFicha Create (0.2ms)[0m  [1m[32mINSERT INTO "curso_fichas" ("curso_id", "ficha_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["curso_id", 11], ["ficha_id", 1], ["created_at", "2022-04-13 02:51:10.685831"], ["updated_at", "2022-04-13 02:51:10.685831"]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFicha Load (0.2ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas" WHERE "fichas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCurso Load (0.3ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mFicha Load (0.2ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas" WHERE "fichas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCursoFicha Load (0.3ms)[0m  [1m[34mSELECT "curso_fichas".* FROM "curso_fichas"[0m
+Started GET "/" for ::1 at 2022-04-14 22:03:45 -0500
+  [1m[35m (10.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_izq.html.erb (Duration: 10.4ms | Allocations: 223)
+  Rendered home/index.html.erb within layouts/application (Duration: 27.6ms | Allocations: 1001)
+  Rendered layout layouts/application.html.erb (Duration: 297.0ms | Allocations: 23682)
+Completed 200 OK in 458ms (Views: 329.9ms | ActiveRecord: 1.2ms | Allocations: 35970)
+
+
+Started GET "/areas" for ::1 at 2022-04-14 22:03:56 -0500
+Processing by AreasController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering areas/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 6.8ms | Allocations: 216)
+  Rendered shared/_izq.html.erb (Duration: 0.2ms | Allocations: 78)
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  ↳ app/views/shared/_areas.html.erb:9
+  Rendered collection of areas/_area.html.erb [3 times] (Duration: 5.1ms | Allocations: 510)
+  Rendered shared/_areas.html.erb (Duration: 15.4ms | Allocations: 3591)
+  Rendered areas/index.html.erb within layouts/application (Duration: 29.5ms | Allocations: 4399)
+  Rendered layout layouts/application.html.erb (Duration: 34.3ms | Allocations: 5972)
+Completed 200 OK in 67ms (Views: 37.6ms | ActiveRecord: 1.1ms | Allocations: 7882)
+
+
+Started GET "/areas/7/cursos" for ::1 at 2022-04-14 22:03:57 -0500
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.4ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:51:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.2ms | Allocations: 107)
+  Rendered shared/_izq2.html.erb (Duration: 11.4ms | Allocations: 690)
+  [1m[36mCurso Load (0.2ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ?[0m  [["area_id", 7]]
+  ↳ app/views/shared/_cursos.html.erb:6
+  Rendered collection of areas/cursos/_curso.html.erb [2 times] (Duration: 4.9ms | Allocations: 770)
+  Rendered shared/_cursos.html.erb (Duration: 61.0ms | Allocations: 6740)
+  Rendered areas/cursos/index.html.erb within layouts/application (Duration: 80.4ms | Allocations: 8051)
+  Rendered layout layouts/application.html.erb (Duration: 86.0ms | Allocations: 9358)
+Completed 200 OK in 169ms (Views: 88.8ms | ActiveRecord: 1.5ms | Allocations: 14304)
+
+
+Started GET "/areas/7/cursos/11" for ::1 at 2022-04-14 22:03:58 -0500
+Processing by Areas::CursosController#show as HTML
+  Parameters: {"area_id"=>"7", "id"=>"11"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:51:in `set_area'
+  [1m[36mCurso Load (0.3ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ? AND "cursos"."id" = ? LIMIT ?[0m  [["area_id", 7], ["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/show.html.erb within layouts/application
+  Rendered areas/cursos/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 98)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 1449)
+Completed 200 OK in 15ms (Views: 6.6ms | ActiveRecord: 0.5ms | Allocations: 3350)
+
+
+Started GET "/areas/7/cursos/11" for ::1 at 2022-04-14 22:04:01 -0500
+Processing by Areas::CursosController#show as HTML
+  Parameters: {"area_id"=>"7", "id"=>"11"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:51:in `set_area'
+  [1m[36mCurso Load (0.2ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ? AND "cursos"."id" = ? LIMIT ?[0m  [["area_id", 7], ["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/show.html.erb within layouts/application
+  Rendered areas/cursos/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 1341)
+Completed 200 OK in 12ms (Views: 6.6ms | ActiveRecord: 0.4ms | Allocations: 2940)
+
+
+Started GET "/areas/7/cursos" for ::1 at 2022-04-14 22:12:11 -0500
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/areas/cursos_controller.rb:51:in `set_area'
+  [1m[36mArea Load (0.3ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:51:in `set_area'
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.9ms | Allocations: 4799)
+
+
+  
+SyntaxError (C:/Users/joymar/Documents/git/v1/app/models/curso.rb:4: syntax error, unexpected ','
+...chas, through: :curso_fichas, , dependent: :destroy
+...                              ^
+):
+  
+app/models/curso.rb:4: syntax error, unexpected ','
+app/models/curso.rb:4: syntax error, unexpected ','
+app/models/curso.rb:4: syntax error, unexpected ','
+app/controllers/areas/cursos_controller.rb:5:in `index'
+Started GET "/areas/7/cursos" for ::1 at 2022-04-14 22:12:50 -0500
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/areas/cursos_controller.rb:51:in `set_area'
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:51:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.5ms | Allocations: 217)
+  Rendered shared/_izq2.html.erb (Duration: 1.2ms | Allocations: 684)
+  [1m[36mCurso Load (0.2ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ?[0m  [["area_id", 7]]
+  ↳ app/views/shared/_cursos.html.erb:6
+  Rendered collection of areas/cursos/_curso.html.erb [2 times] (Duration: 1.3ms | Allocations: 684)
+  Rendered shared/_cursos.html.erb (Duration: 10.5ms | Allocations: 4991)
+  Rendered areas/cursos/index.html.erb within layouts/application (Duration: 17.5ms | Allocations: 6446)
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 8031)
+Completed 200 OK in 53ms (Views: 26.8ms | ActiveRecord: 3.1ms | Allocations: 14910)
+
+
+Started GET "/fichas" for ::1 at 2022-04-14 22:12:53 -0500
+  
+ActionController::RoutingError (uninitialized constant FichasController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  FichaController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/areas/7/cursos" for ::1 at 2022-04-14 22:17:49 -0500
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/areas/cursos_controller.rb:51:in `set_area'
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:51:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.5ms | Allocations: 217)
+  Rendered shared/_izq2.html.erb (Duration: 1.1ms | Allocations: 645)
+  [1m[36mCurso Load (0.2ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ?[0m  [["area_id", 7]]
+  ↳ app/views/shared/_cursos.html.erb:6
+  Rendered collection of areas/cursos/_curso.html.erb [2 times] (Duration: 18.6ms | Allocations: 6193)
+  Rendered shared/_cursos.html.erb (Duration: 27.6ms | Allocations: 10499)
+  Rendered areas/cursos/index.html.erb within layouts/application (Duration: 34.9ms | Allocations: 11915)
+  Rendered layout layouts/application.html.erb (Duration: 35.7ms | Allocations: 12009)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 2.6ms | Allocations: 18856)
+
+
+  
+ActionView::Template::Error (undefined method `ficha_curso_fichas' for #<ActionView::Base:0x00000000025f80>
+Did you mean?  ficha_curso_fichas_url
+               ficha_curso_fichas_path
+               ficha_curso_ficha_url
+               ficha_curso_ficha_path):
+    1: <tr>
+    2:     <td>
+    3:         <%= link_to curso.nombre_curso, ficha_curso_fichas(curso ), class:"noblue"%>
+    4:     </td>
+    5:     <td>
+    6:         <%=button_to 'Borrar curso', area_curso_path(@area, curso), method: :delete, form: {data: {turbo_confirm: '¿Estás seguro?' }}, class:"button" %>
+  
+app/views/areas/cursos/_curso.html.erb:3
+app/views/shared/_cursos.html.erb:6
+app/views/areas/cursos/index.html.erb:4
+Started GET "/areas/7/cursos" for ::1 at 2022-04-14 22:18:19 -0500
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:51:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.8ms | Allocations: 209)
+  Rendered shared/_izq2.html.erb (Duration: 1.6ms | Allocations: 620)
+  [1m[36mCurso Load (0.3ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ?[0m  [["area_id", 7]]
+  ↳ app/views/shared/_cursos.html.erb:6
+  Rendered collection of areas/cursos/_curso.html.erb [2 times] (Duration: 2.0ms | Allocations: 675)
+  Rendered shared/_cursos.html.erb (Duration: 7.7ms | Allocations: 1793)
+  Rendered areas/cursos/index.html.erb within layouts/application (Duration: 17.4ms | Allocations: 3169)
+  Rendered layout layouts/application.html.erb (Duration: 25.8ms | Allocations: 4754)
+Completed 200 OK in 38ms (Views: 32.0ms | ActiveRecord: 0.5ms | Allocations: 6191)
+
+
+Started GET "/fichas/11/curso_fichas" for ::1 at 2022-04-14 22:18:21 -0500
+  
+ActionController::RoutingError (uninitialized constant Fichas
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/areas/7/cursos" for ::1 at 2022-04-14 22:25:28 -0500
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/areas/cursos_controller.rb:51:in `set_area'
+  [1m[36mArea Load (0.3ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:51:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.6ms | Allocations: 209)
+  Rendered shared/_izq2.html.erb (Duration: 1.4ms | Allocations: 638)
+  [1m[36mCurso Load (0.3ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ?[0m  [["area_id", 7]]
+  ↳ app/views/shared/_cursos.html.erb:6
+  Rendered collection of areas/cursos/_curso.html.erb [2 times] (Duration: 1.9ms | Allocations: 752)
+  Rendered shared/_cursos.html.erb (Duration: 6.6ms | Allocations: 1890)
+  Rendered areas/cursos/index.html.erb within layouts/application (Duration: 14.2ms | Allocations: 3284)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 4866)
+Completed 200 OK in 33ms (Views: 25.3ms | ActiveRecord: 1.0ms | Allocations: 6865)
+
+
+Started GET "/fichas.11" for ::1 at 2022-04-14 22:25:29 -0500
+  
+ActionController::RoutingError (uninitialized constant FichasController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  FichaController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/areas/7/cursos" for ::1 at 2022-04-14 22:26:01 -0500
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:51:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.5ms | Allocations: 209)
+  Rendered shared/_izq2.html.erb (Duration: 1.2ms | Allocations: 647)
+  [1m[36mCurso Load (0.2ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ?[0m  [["area_id", 7]]
+  ↳ app/views/shared/_cursos.html.erb:6
+  Rendered collection of areas/cursos/_curso.html.erb [2 times] (Duration: 1.5ms | Allocations: 715)
+  Rendered shared/_cursos.html.erb (Duration: 6.7ms | Allocations: 1833)
+  Rendered areas/cursos/index.html.erb within layouts/application (Duration: 14.3ms | Allocations: 3236)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 4818)
+Completed 200 OK in 32ms (Views: 26.9ms | ActiveRecord: 0.4ms | Allocations: 6240)
+
+
+Started GET "/ficha/index.11" for ::1 at 2022-04-14 22:26:03 -0500
+Processing by FichaController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering ficha/index.html.erb within layouts/application
+  [1m[36mFicha Load (2.0ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas"[0m
+  ↳ app/views/ficha/index.html.erb:3
+  Rendered ficha/index.html.erb within layouts/application (Duration: 60.3ms | Allocations: 7599)
+  Rendered layout layouts/application.html.erb (Duration: 61.0ms | Allocations: 7693)
+Completed 500 Internal Server Error in 79ms (ActiveRecord: 2.8ms | Allocations: 9630)
+
+
+  
+ActionView::Template::Error (Missing partial fichas/_ficha with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "C:/Users/joymar/Documents/git/v1/app/views"
+  * "C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views"
+  * "C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actiontext-7.0.2.3/app/views"
+  * "C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.2.3/app/views"
+
+Did you mean?  ficha/ficha
+               shared/image
+               shared/image2
+               shared/izq
+               areas/edit
+               areas/show):
+    1: <h1>Ficha#index</h1>
+    2: <p>Find me in app/views/ficha/index.html.erb</p>
+    3: <%= render @ficha %>
+  
+app/views/ficha/index.html.erb:3
+Started GET "/ficha/index.11" for ::1 at 2022-04-14 22:26:29 -0500
+Processing by FichaController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering ficha/index.html.erb within layouts/application
+  Rendered ficha/index.html.erb within layouts/application (Duration: 19.7ms | Allocations: 1350)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 1453)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.0ms | Allocations: 2360)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    1: <h1>Ficha#index</h1>
+    2: <p>Find me in app/views/ficha/index.html.erb</p>
+    3: <%= render @fichas %>
+  
+app/views/ficha/index.html.erb:3
+Started GET "/ficha/index.11" for ::1 at 2022-04-14 22:26:38 -0500
+Processing by FichaController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering ficha/index.html.erb within layouts/application
+  [1m[36mFicha Load (0.2ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas"[0m
+  ↳ app/views/ficha/index.html.erb:3
+  Rendered ficha/index.html.erb within layouts/application (Duration: 60.8ms | Allocations: 5991)
+  Rendered layout layouts/application.html.erb (Duration: 61.6ms | Allocations: 6085)
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 0.2ms | Allocations: 6982)
+
+
+  
+ActionView::Template::Error (Missing partial fichas/_ficha with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "C:/Users/joymar/Documents/git/v1/app/views"
+  * "C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views"
+  * "C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actiontext-7.0.2.3/app/views"
+  * "C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.2.3/app/views"
+
+Did you mean?  ficha/ficha
+               shared/image
+               shared/image2
+               shared/izq
+               areas/edit
+               areas/show):
+    1: <h1>Ficha#index</h1>
+    2: <p>Find me in app/views/ficha/index.html.erb</p>
+    3: <%= render @ficha %>
+  
+app/views/ficha/index.html.erb:3
+Started GET "/ficha/index.11" for ::1 at 2022-04-14 22:27:24 -0500
+Processing by FichaController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering ficha/index.html.erb within layouts/application
+  [1m[36mFicha Load (0.2ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas"[0m
+  ↳ app/views/ficha/index.html.erb:3
+  Rendered ficha/index.html.erb within layouts/application (Duration: 54.7ms | Allocations: 5992)
+  Rendered layout layouts/application.html.erb (Duration: 56.5ms | Allocations: 6086)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 0.2ms | Allocations: 6983)
+
+
+  
+ActionView::Template::Error (Missing partial fichas/_ficha with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "C:/Users/joymar/Documents/git/v1/app/views"
+  * "C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views"
+  * "C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actiontext-7.0.2.3/app/views"
+  * "C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.2.3/app/views"
+
+Did you mean?  ficha/ficha
+               shared/image
+               shared/image2
+               shared/izq
+               areas/edit
+               areas/show):
+    1: <h1>Ficha#index</h1>
+    2: <p>Find me in app/views/ficha/index.html.erb</p>
+    3: <%= render @ficha %>
+  
+app/views/ficha/index.html.erb:3
+Started GET "/areas/7/cursos" for ::1 at 2022-04-14 22:27:26 -0500
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.4ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:51:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.6ms | Allocations: 209)
+  Rendered shared/_izq2.html.erb (Duration: 3.3ms | Allocations: 653)
+  [1m[36mCurso Load (0.2ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ?[0m  [["area_id", 7]]
+  ↳ app/views/shared/_cursos.html.erb:6
+  Rendered collection of areas/cursos/_curso.html.erb [2 times] (Duration: 1.3ms | Allocations: 663)
+  Rendered shared/_cursos.html.erb (Duration: 6.4ms | Allocations: 1785)
+  Rendered areas/cursos/index.html.erb within layouts/application (Duration: 16.6ms | Allocations: 3209)
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 4791)
+Completed 200 OK in 31ms (Views: 25.0ms | ActiveRecord: 0.7ms | Allocations: 6066)
+
+
+Started GET "/ficha/index" for ::1 at 2022-04-14 22:27:27 -0500
+Processing by FichaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ficha/index.html.erb within layouts/application
+  [1m[36mFicha Load (0.2ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas"[0m
+  ↳ app/views/ficha/index.html.erb:3
+  Rendered ficha/index.html.erb within layouts/application (Duration: 52.8ms | Allocations: 5684)
+  Rendered layout layouts/application.html.erb (Duration: 53.6ms | Allocations: 5772)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 0.2ms | Allocations: 6068)
+
+
+  
+ActionView::Template::Error (Missing partial fichas/_ficha with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "C:/Users/joymar/Documents/git/v1/app/views"
+  * "C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views"
+  * "C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actiontext-7.0.2.3/app/views"
+  * "C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.2.3/app/views"
+
+Did you mean?  ficha/ficha
+               shared/image
+               shared/image2
+               shared/izq
+               areas/edit
+               areas/show):
+    1: <h1>Ficha#index</h1>
+    2: <p>Find me in app/views/ficha/index.html.erb</p>
+    3: <%= render @ficha %>
+  
+app/views/ficha/index.html.erb:3
+Started GET "/ficha/index" for ::1 at 2022-04-14 22:27:45 -0500
+Processing by FichaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ficha/index.html.erb within layouts/application
+  [1m[36mFicha Load (0.2ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas"[0m
+  ↳ app/views/ficha/index.html.erb:3
+  Rendered ficha/index.html.erb within layouts/application (Duration: 54.1ms | Allocations: 5957)
+  Rendered layout layouts/application.html.erb (Duration: 55.0ms | Allocations: 6051)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 0.2ms | Allocations: 6851)
+
+
+  
+ActionView::Template::Error (Missing partial fichas/_ficha with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "C:/Users/joymar/Documents/git/v1/app/views"
+  * "C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views"
+  * "C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actiontext-7.0.2.3/app/views"
+  * "C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.2.3/app/views"
+
+Did you mean?  ficha/ficha
+               shared/image
+               shared/image2
+               shared/izq
+               areas/edit
+               areas/show):
+    1: <h1>Ficha#index</h1>
+    2: <p>Find me in app/views/ficha/index.html.erb</p>
+    3: <%= render @ficha %>
+  
+app/views/ficha/index.html.erb:3
+Started GET "/ficha/index" for ::1 at 2022-04-14 22:29:04 -0500
+Processing by FichaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ficha/index.html.erb within layouts/application
+  Rendered ficha/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1143)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 1237)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 2068)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    1: <h1>Ficha#index</h1>
+    2: <p>Find me in app/views/ficha/index.html.erb</p>
+    3: <%= render @fichas %>
+  
+app/views/ficha/index.html.erb:3
+Started GET "/areas/7/cursos" for ::1 at 2022-04-14 22:30:14 -0500
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/areas/cursos_controller.rb:51:in `set_area'
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:51:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.5ms | Allocations: 217)
+  Rendered shared/_izq2.html.erb (Duration: 1.1ms | Allocations: 672)
+  [1m[36mCurso Load (0.2ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ?[0m  [["area_id", 7]]
+  ↳ app/views/shared/_cursos.html.erb:6
+  Rendered collection of areas/cursos/_curso.html.erb [2 times] (Duration: 13.2ms | Allocations: 6290)
+  Rendered shared/_cursos.html.erb (Duration: 21.1ms | Allocations: 10594)
+  Rendered areas/cursos/index.html.erb within layouts/application (Duration: 29.0ms | Allocations: 12052)
+  Rendered layout layouts/application.html.erb (Duration: 29.7ms | Allocations: 12146)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 3.0ms | Allocations: 18793)
+
+
+  
+ActionView::Template::Error (undefined method `ficha_index_url_path' for #<ActionView::Base:0x0000000002ff08>
+Did you mean?  ficha_index_path
+               ficha_index_url):
+    1: <tr>
+    2:     <td>
+    3:         <%= link_to curso.nombre_curso, ficha_index_url_path(), class:"noblue"%>
+    4:     </td>
+    5:     <td>
+    6:         <%=button_to 'Borrar curso', area_curso_path(@area, curso), method: :delete, form: {data: {turbo_confirm: '¿Estás seguro?' }}, class:"button" %>
+  
+app/views/areas/cursos/_curso.html.erb:3
+app/views/shared/_cursos.html.erb:6
+app/views/areas/cursos/index.html.erb:4
+Started GET "/areas/7/cursos" for ::1 at 2022-04-14 22:30:37 -0500
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/areas/cursos_controller.rb:51:in `set_area'
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:51:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.6ms | Allocations: 217)
+  Rendered shared/_izq2.html.erb (Duration: 1.2ms | Allocations: 672)
+  [1m[36mCurso Load (0.2ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ?[0m  [["area_id", 7]]
+  ↳ app/views/shared/_cursos.html.erb:6
+  Rendered collection of areas/cursos/_curso.html.erb [2 times] (Duration: 1.2ms | Allocations: 684)
+  Rendered shared/_cursos.html.erb (Duration: 10.2ms | Allocations: 4990)
+  Rendered areas/cursos/index.html.erb within layouts/application (Duration: 17.4ms | Allocations: 6431)
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | Allocations: 8016)
+Completed 200 OK in 44ms (Views: 27.2ms | ActiveRecord: 2.8ms | Allocations: 14920)
+
+
+Started GET "/ficha/index" for ::1 at 2022-04-14 22:30:40 -0500
+Processing by FichaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ficha/index.html.erb within layouts/application
+  [1m[36mFicha Load (0.2ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas"[0m
+  ↳ app/views/ficha/index.html.erb:3
+  Rendered ficha/index.html.erb within layouts/application (Duration: 58.5ms | Allocations: 7194)
+  Rendered layout layouts/application.html.erb (Duration: 59.4ms | Allocations: 7288)
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 1.0ms | Allocations: 9080)
+
+
+  
+ActionView::Template::Error (Missing partial fichas/_ficha with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "C:/Users/joymar/Documents/git/v1/app/views"
+  * "C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views"
+  * "C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actiontext-7.0.2.3/app/views"
+  * "C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.2.3/app/views"
+
+Did you mean?  ficha/ficha
+               shared/image
+               shared/image2
+               shared/izq
+               areas/edit
+               areas/show):
+    1: <h1>Ficha#index</h1>
+    2: <p>Find me in app/views/ficha/index.html.erb</p>
+    3: <%= render @fichas %>
+  
+app/views/ficha/index.html.erb:3
+Started GET "/areas/7/cursos" for ::1 at 2022-04-14 22:32:48 -0500
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:51:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.7ms | Allocations: 209)
+  Rendered shared/_izq2.html.erb (Duration: 1.1ms | Allocations: 662)
+  [1m[36mCurso Load (0.2ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ?[0m  [["area_id", 7]]
+  ↳ app/views/shared/_cursos.html.erb:6
+  Rendered collection of areas/cursos/_curso.html.erb [2 times] (Duration: 9.5ms | Allocations: 6592)
+  Rendered shared/_cursos.html.erb (Duration: 14.6ms | Allocations: 7710)
+  Rendered areas/cursos/index.html.erb within layouts/application (Duration: 21.8ms | Allocations: 9130)
+  Rendered layout layouts/application.html.erb (Duration: 22.6ms | Allocations: 9224)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.4ms | Allocations: 10663)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `ficha_index' for #<ActionView::Base:0x00000000038388>
+Did you mean?  ficha_index_url):
+    1: <tr>
+    2:     <td>
+    3:         <%= link_to curso.nombre_curso, ficha_index, method: :get, class:"noblue"%>
+    4:     </td>
+    5:     <td>
+    6:         <%=button_to 'Borrar curso', area_curso_path(@area, curso), method: :delete, form: {data: {turbo_confirm: '¿Estás seguro?' }}, class:"button" %>
+  
+app/views/areas/cursos/_curso.html.erb:3
+app/views/shared/_cursos.html.erb:6
+app/views/areas/cursos/index.html.erb:4
+Started GET "/areas" for ::1 at 2022-04-14 22:33:16 -0500
+Processing by AreasController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering areas/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.5ms | Allocations: 215)
+  Rendered shared/_izq.html.erb (Duration: 0.5ms | Allocations: 207)
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  ↳ app/views/shared/_areas.html.erb:9
+  Rendered collection of areas/_area.html.erb [3 times] (Duration: 0.9ms | Allocations: 458)
+  Rendered shared/_areas.html.erb (Duration: 5.4ms | Allocations: 1527)
+  Rendered areas/index.html.erb within layouts/application (Duration: 14.0ms | Allocations: 2548)
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 4409)
+Completed 200 OK in 28ms (Views: 25.5ms | ActiveRecord: 0.2ms | Allocations: 5392)
+
+
+Started GET "/areas/7/cursos" for ::1 at 2022-04-14 22:33:18 -0500
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:51:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered shared/_izq2.html.erb (Duration: 1.0ms | Allocations: 638)
+  [1m[36mCurso Load (0.2ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ?[0m  [["area_id", 7]]
+  ↳ app/views/shared/_cursos.html.erb:6
+  Rendered collection of areas/cursos/_curso.html.erb [2 times] (Duration: 1.2ms | Allocations: 671)
+  Rendered shared/_cursos.html.erb (Duration: 5.8ms | Allocations: 1789)
+  Rendered areas/cursos/index.html.erb within layouts/application (Duration: 11.5ms | Allocations: 3036)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 4338)
+Completed 200 OK in 26ms (Views: 20.5ms | ActiveRecord: 0.4ms | Allocations: 5607)
+
+
+Started GET "/ficha/index" for ::1 at 2022-04-14 22:33:19 -0500
+Processing by FichaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ficha/index.html.erb within layouts/application
+  [1m[36mFicha Load (0.2ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas"[0m
+  ↳ app/views/ficha/index.html.erb:3
+  Rendered ficha/index.html.erb within layouts/application (Duration: 57.5ms | Allocations: 5958)
+  Rendered layout layouts/application.html.erb (Duration: 58.4ms | Allocations: 6052)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 0.2ms | Allocations: 6684)
+
+
+  
+ActionView::Template::Error (Missing partial fichas/_ficha with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "C:/Users/joymar/Documents/git/v1/app/views"
+  * "C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views"
+  * "C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actiontext-7.0.2.3/app/views"
+  * "C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.2.3/app/views"
+
+Did you mean?  ficha/ficha
+               shared/image
+               shared/image2
+               shared/izq
+               areas/edit
+               areas/show):
+    1: <h1>Ficha#index</h1>
+    2: <p>Find me in app/views/ficha/index.html.erb</p>
+    3: <%= render @fichas %>
+  
+app/views/ficha/index.html.erb:3
+Started GET "/ficha/index" for ::1 at 2022-04-14 22:34:18 -0500
+Processing by FichaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ficha/index.html.erb within layouts/application
+  [1m[36mFicha Load (0.2ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas"[0m
+  ↳ app/views/ficha/index.html.erb:3
+  Rendered ficha/index.html.erb within layouts/application (Duration: 54.6ms | Allocations: 5955)
+  Rendered layout layouts/application.html.erb (Duration: 55.3ms | Allocations: 6049)
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 0.2ms | Allocations: 6871)
+
+
+  
+ActionView::Template::Error (Missing partial fichas/_ficha with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "C:/Users/joymar/Documents/git/v1/app/views"
+  * "C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views"
+  * "C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actiontext-7.0.2.3/app/views"
+  * "C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.2.3/app/views"
+
+Did you mean?  ficha/ficha
+               shared/image
+               shared/image2
+               shared/izq
+               areas/edit
+               areas/show):
+    1: <h1>Ficha#index</h1>
+    2: <p>Find me in app/views/ficha/index.html.erb</p>
+    3: <%= render @fichas %>
+  
+app/views/ficha/index.html.erb:3
+Started GET "/areas/7/cursos" for ::1 at 2022-04-14 22:34:23 -0500
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:51:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.5ms | Allocations: 209)
+  Rendered shared/_izq2.html.erb (Duration: 1.0ms | Allocations: 677)
+  [1m[36mCurso Load (0.3ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ?[0m  [["area_id", 7]]
+  ↳ app/views/shared/_cursos.html.erb:6
+  Rendered collection of areas/cursos/_curso.html.erb [2 times] (Duration: 15.1ms | Allocations: 6562)
+  Rendered shared/_cursos.html.erb (Duration: 20.7ms | Allocations: 7678)
+  Rendered areas/cursos/index.html.erb within layouts/application (Duration: 27.7ms | Allocations: 9128)
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 9222)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.5ms | Allocations: 10465)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `fichas_index_url' for #<ActionView::Base:0x00000000038fb8>
+Did you mean?  ficha_index_url
+               ficha_new_url):
+    1: <tr>
+    2:     <td>
+    3:         <%= link_to curso.nombre_curso, fichas_index_url, method: :get, class:"noblue"%>
+    4:     </td>
+    5:     <td>
+    6:         <%=button_to 'Borrar curso', area_curso_path(@area, curso), method: :delete, form: {data: {turbo_confirm: '¿Estás seguro?' }}, class:"button" %>
+  
+app/views/areas/cursos/_curso.html.erb:3
+app/views/shared/_cursos.html.erb:6
+app/views/areas/cursos/index.html.erb:4
+Started GET "/areas" for ::1 at 2022-04-14 22:34:45 -0500
+Processing by AreasController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering areas/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.5ms | Allocations: 209)
+  Rendered shared/_izq.html.erb (Duration: 0.5ms | Allocations: 206)
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  ↳ app/views/shared/_areas.html.erb:9
+  Rendered collection of areas/_area.html.erb [3 times] (Duration: 0.9ms | Allocations: 451)
+  Rendered shared/_areas.html.erb (Duration: 5.5ms | Allocations: 1455)
+  Rendered areas/index.html.erb within layouts/application (Duration: 11.8ms | Allocations: 2469)
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 4332)
+Completed 200 OK in 28ms (Views: 26.0ms | ActiveRecord: 0.2ms | Allocations: 5181)
+
+
+Started GET "/areas/7/cursos" for ::1 at 2022-04-14 22:34:46 -0500
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:51:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.3ms | Allocations: 101)
+  Rendered shared/_izq2.html.erb (Duration: 1.2ms | Allocations: 641)
+  [1m[36mCurso Load (0.2ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ?[0m  [["area_id", 7]]
+  ↳ app/views/shared/_cursos.html.erb:6
+  Rendered collection of areas/cursos/_curso.html.erb [2 times] (Duration: 2.5ms | Allocations: 671)
+  Rendered shared/_cursos.html.erb (Duration: 8.1ms | Allocations: 1789)
+  Rendered areas/cursos/index.html.erb within layouts/application (Duration: 15.5ms | Allocations: 3039)
+  Rendered layout layouts/application.html.erb (Duration: 22.0ms | Allocations: 4341)
+Completed 200 OK in 32ms (Views: 26.1ms | ActiveRecord: 0.4ms | Allocations: 5610)
+
+
+Started GET "/fichas" for ::1 at 2022-04-14 22:34:47 -0500
+  
+ActionController::RoutingError (uninitialized constant FichasController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  FichaController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/fichas" for ::1 at 2022-04-14 22:36:14 -0500
+  
+ActionController::RoutingError (uninitialized constant FichasController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  FichaController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+  [1m[35m (10.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFicha Create (1.7ms)[0m  [1m[32mINSERT INTO "fichas" ("num_ficha", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["num_ficha", 234567], ["created_at", "2022-04-18 01:55:32.290606"], ["updated_at", "2022-04-18 01:55:32.290606"]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFicha Create (6.8ms)[0m  [1m[32mINSERT INTO "fichas" ("num_ficha", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["num_ficha", 345678], ["created_at", "2022-04-18 01:55:46.947597"], ["updated_at", "2022-04-18 01:55:46.947597"]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFicha Create (0.9ms)[0m  [1m[32mINSERT INTO "fichas" ("num_ficha", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["num_ficha", 3456789], ["created_at", "2022-04-18 01:55:56.275772"], ["updated_at", "2022-04-18 01:55:56.275772"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2022-04-17 21:26:28 -0500
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_izq.html.erb (Duration: 13.8ms | Allocations: 223)
+  Rendered home/index.html.erb within layouts/application (Duration: 44.6ms | Allocations: 1001)
+  Rendered layout layouts/application.html.erb (Duration: 525.7ms | Allocations: 23563)
+Completed 200 OK in 850ms (Views: 576.7ms | ActiveRecord: 4.9ms | Allocations: 35887)
+
+
+Started GET "/areas" for ::1 at 2022-04-17 21:28:44 -0500
+Processing by AreasController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering areas/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 8.3ms | Allocations: 216)
+  Rendered shared/_izq.html.erb (Duration: 0.2ms | Allocations: 78)
+  [1m[36mArea Load (0.3ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  ↳ app/views/shared/_areas.html.erb:9
+  Rendered collection of areas/_area.html.erb [3 times] (Duration: 5.2ms | Allocations: 510)
+  Rendered shared/_areas.html.erb (Duration: 17.6ms | Allocations: 3648)
+  Rendered areas/index.html.erb within layouts/application (Duration: 35.5ms | Allocations: 4456)
+  Rendered layout layouts/application.html.erb (Duration: 40.7ms | Allocations: 6005)
+Completed 200 OK in 60ms (Views: 47.0ms | ActiveRecord: 1.1ms | Allocations: 7918)
+
+
+Started GET "/areas/7/cursos" for ::1 at 2022-04-17 21:28:46 -0500
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.3ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:51:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.2ms | Allocations: 107)
+  Rendered shared/_izq2.html.erb (Duration: 11.2ms | Allocations: 708)
+  [1m[36mCurso Load (0.6ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ?[0m  [["area_id", 7]]
+  ↳ app/views/shared/_cursos.html.erb:6
+  Rendered collection of areas/cursos/_curso.html.erb [2 times] (Duration: 1.2ms | Allocations: 799)
+  Rendered shared/_cursos.html.erb (Duration: 58.5ms | Allocations: 6768)
+  Rendered areas/cursos/index.html.erb within layouts/application (Duration: 79.9ms | Allocations: 8097)
+  Rendered layout layouts/application.html.erb (Duration: 84.7ms | Allocations: 9404)
+Completed 200 OK in 174ms (Views: 86.7ms | ActiveRecord: 2.0ms | Allocations: 14379)
+
+
+Started GET "/fichas" for ::1 at 2022-04-17 21:28:47 -0500
+  
+ActionController::RoutingError (uninitialized constant FichasController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  FichaController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/areas" for ::1 at 2022-04-17 21:46:02 -0500
+Processing by AreasController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering areas/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.5ms | Allocations: 217)
+  Rendered shared/_izq.html.erb (Duration: 0.7ms | Allocations: 207)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/shared/_areas.html.erb:9
+  [1m[36mArea Load (0.5ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  ↳ app/views/shared/_areas.html.erb:9
+  Rendered collection of areas/_area.html.erb [3 times] (Duration: 0.9ms | Allocations: 461)
+  Rendered shared/_areas.html.erb (Duration: 12.3ms | Allocations: 3321)
+  Rendered areas/index.html.erb within layouts/application (Duration: 18.8ms | Allocations: 4342)
+  Rendered layout layouts/application.html.erb (Duration: 33.5ms | Allocations: 6183)
+Completed 200 OK in 46ms (Views: 41.9ms | ActiveRecord: 1.2ms | Allocations: 7943)
+
+
+Started GET "/areas" for ::1 at 2022-04-17 21:46:06 -0500
+Processing by AreasController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering areas/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.2ms | Allocations: 53)
+  Rendered shared/_izq.html.erb (Duration: 0.2ms | Allocations: 71)
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  ↳ app/views/shared/_areas.html.erb:9
+  Rendered collection of areas/_area.html.erb [3 times] (Duration: 0.5ms | Allocations: 292)
+  Rendered shared/_areas.html.erb (Duration: 4.4ms | Allocations: 1041)
+  Rendered areas/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1384)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 2708)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.2ms | Allocations: 3037)
+
+
+Started GET "/areas/7/cursos" for ::1 at 2022-04-17 21:46:08 -0500
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.4ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.2ms | Allocations: 107)
+  Rendered shared/_izq2.html.erb (Duration: 1.1ms | Allocations: 653)
+  [1m[36mCurso Load (0.3ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ?[0m  [["area_id", 7]]
+  ↳ app/views/shared/_cursos.html.erb:6
+  Rendered collection of areas/cursos/_curso.html.erb [2 times] (Duration: 1.2ms | Allocations: 692)
+  Rendered shared/_cursos.html.erb (Duration: 12.2ms | Allocations: 4637)
+  Rendered areas/cursos/index.html.erb within layouts/application (Duration: 17.8ms | Allocations: 5910)
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 7215)
+Completed 200 OK in 45ms (Views: 28.7ms | ActiveRecord: 0.6ms | Allocations: 11053)
+
+
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 21:46:09 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.1ms | Allocations: 79)
+  Rendered shared/_izq3.html.erb (Duration: 10.6ms | Allocations: 243)
+  Rendered areas/cursos/_form.html.erb (Duration: 0.9ms | Allocations: 1406)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 16.3ms | Allocations: 2243)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 2337)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.2ms | Allocations: 4675)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form_for [@area, @curso] do |f| %>
+    <div class="field">
+        <%= f.text_field :nombre_curso, placeholder:"ingrese nombre del area", class:"in"  ,required:"true"%>
+    </div>
+    <%= f.submit "Guardar", class:"bo" %> 
+        <div class="field">
+        <%= <%= check_box_tag "fichas[]",ficha.id %> <%= ficha.num_ficha%>
+    </div>
+<% end %>
+
+):
+1:    <%= form_for [@area, @curso] do |f| %>
+2:        <div class="field">
+3:            <%= f.text_field :nombre_curso, placeholder:"ingrese nombre del area", class:"in"  ,required:"true"%>
+4:        </div>
+5:        <%= f.submit "Guardar", class:"bo" %> 
+6:            <div class="field">
+7:            <%= <%= check_box_tag "fichas[]",ficha.id %> <%= ficha.num_ficha%>
+8:        </div>
+9:    <% end %>
+  
+app/views/areas/cursos/_form.html.erb:7: syntax error, unexpected '<'
+app/views/areas/cursos/_form.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/areas/cursos/_form.html.erb:11: syntax error, unexpected `end', expecting ')'
+app/views/areas/cursos/_form.html.erb:7: syntax error, unexpected '<'
+app/views/areas/cursos/_form.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/areas/cursos/_form.html.erb:11: syntax error, unexpected `end', expecting ')'
+app/views/areas/cursos/_form.html.erb:7: syntax error, unexpected '<'
+app/views/areas/cursos/_form.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/areas/cursos/_form.html.erb:11: syntax error, unexpected `end', expecting ')'
+app/views/areas/cursos/_form.html.erb:7: syntax error, unexpected '<'
+app/views/areas/cursos/_form.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/areas/cursos/_form.html.erb:11: syntax error, unexpected `end', expecting ')'
+app/views/areas/cursos/_form.html.erb:7: syntax error, unexpected '<'
+app/views/areas/cursos/_form.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/areas/cursos/_form.html.erb:11: syntax error, unexpected `end', expecting ')'
+app/views/areas/cursos/_form.html.erb:7: syntax error, unexpected '<'
+app/views/areas/cursos/_form.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/areas/cursos/_form.html.erb:11: syntax error, unexpected `end', expecting ')'
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 21:46:38 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.5ms | Allocations: 209)
+  Rendered shared/_izq3.html.erb (Duration: 1.5ms | Allocations: 226)
+  Rendered areas/cursos/_form.html.erb (Duration: 125.0ms | Allocations: 21624)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 136.5ms | Allocations: 22638)
+  Rendered layout layouts/application.html.erb (Duration: 137.2ms | Allocations: 22732)
+Completed 500 Internal Server Error in 151ms (ActiveRecord: 0.2ms | Allocations: 24400)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `ficha' for #<ActionView::Base:0x00000000017a48>
+Did you mean?  @ficha):
+    4:     </div>
+    5:     <%= f.submit "Guardar", class:"bo" %> 
+    6:         <div class="field">
+    7:         <%=  check_box_tag "fichas[]",ficha.id %> <%= ficha.num_ficha%>
+    8:     </div>
+    9: <% end %>
+  
+app/views/areas/cursos/_form.html.erb:7
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 22:18:40 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  [1m[36mArea Load (0.4ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.8ms | Allocations: 209)
+  Rendered shared/_izq3.html.erb (Duration: 0.9ms | Allocations: 226)
+  [1m[36mFicha Load (0.4ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/areas/cursos/new.html.erb:7
+  [1m[36mCACHE Ficha Load (0.0ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/areas/cursos/new.html.erb:7
+  Rendered areas/cursos/_form.html.erb (Duration: 49.9ms | Allocations: 9192)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 66.8ms | Allocations: 10194)
+  Rendered layout layouts/application.html.erb (Duration: 68.3ms | Allocations: 10288)
+Completed 500 Internal Server Error in 122ms (ActiveRecord: 5.9ms | Allocations: 12533)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<ActiveRecord::Relation [#<Ficha id: 1, num_ficha: 123456, created_at: "2022-04-13 02:51:10.671005000 +0000", updated_at: "2022-04-13 02:51:10.671005000 +0000">, #<Ficha id: 2, num_ficha: 234567, created_at: "2022-04-18 01:55:32.290606000 +0000", updated_at: "2022-04-18 01:55:32.290606000 +0000">, #<Ficha id: 3, num_ficha: 345678, created_at: "2022-04-18 01:55:46.947597000 +0000", updated_at: "2022-04-18 01:55:46.947597000 +0000">, #<Ficha id: 4, num_ficha: 3456789, created_at: "2022-04-18 01:55:56.275772000 +0000", updated_at: "2022-04-18 01:55:56.275772000 +0000">]>
+Did you mean?  ids):
+    4:     </div>
+    5:     <%= f.submit "Guardar", class:"bo" %> 
+    6:         <div class="field">
+    7:         <%=  check_box_tag "fichas[]",@ficha.id %> <%= ficha.num_ficha%>
+    8:     </div>
+    9: <% end %>
+  
+app/views/areas/cursos/_form.html.erb:7
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 22:18:55 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.3ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.5ms | Allocations: 209)
+  Rendered shared/_izq3.html.erb (Duration: 2.0ms | Allocations: 226)
+  Rendered areas/cursos/_form.html.erb (Duration: 11.2ms | Allocations: 6449)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 22.5ms | Allocations: 7451)
+  Rendered layout layouts/application.html.erb (Duration: 23.9ms | Allocations: 7545)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.3ms | Allocations: 9169)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `ficha' for #<ActionView::Base:0x00000000018240>
+Did you mean?  @ficha):
+    4:     </div>
+    5:     <%= f.submit "Guardar", class:"bo" %> 
+    6:         <div class="field">
+    7:         <%=  check_box_tag "fichas[]",@ficha %> <%= ficha.num_ficha%>
+    8:     </div>
+    9: <% end %>
+  
+app/views/areas/cursos/_form.html.erb:7
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 22:19:07 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.9ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.7ms | Allocations: 209)
+  Rendered shared/_izq3.html.erb (Duration: 0.7ms | Allocations: 226)
+  Rendered areas/cursos/_form.html.erb (Duration: 1.3ms | Allocations: 806)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 11.1ms | Allocations: 1805)
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 3386)
+Completed 200 OK in 36ms (Views: 29.5ms | ActiveRecord: 0.9ms | Allocations: 5085)
+
+
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 22:22:56 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 1.0ms | Allocations: 209)
+  Rendered shared/_izq3.html.erb (Duration: 1.0ms | Allocations: 226)
+  Rendered areas/cursos/_form.html.erb (Duration: 3.4ms | Allocations: 802)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 16.7ms | Allocations: 1801)
+  Rendered layout layouts/application.html.erb (Duration: 33.0ms | Allocations: 3371)
+Completed 200 OK in 57ms (Views: 49.4ms | ActiveRecord: 0.2ms | Allocations: 5072)
+
+
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 22:24:13 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.4ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.5ms | Allocations: 209)
+  Rendered shared/_izq3.html.erb (Duration: 0.9ms | Allocations: 226)
+  [1m[36mFicha Load (0.3ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/areas/cursos/new.html.erb:7
+  [1m[36mCACHE Ficha Load (0.0ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/areas/cursos/new.html.erb:7
+  Rendered areas/cursos/_form.html.erb (Duration: 15.4ms | Allocations: 7326)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 23.7ms | Allocations: 8328)
+  Rendered layout layouts/application.html.erb (Duration: 24.8ms | Allocations: 8422)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.7ms | Allocations: 10085)
+
+
+  
+ActionView::Template::Error (undefined method `num_ficha' for #<ActiveRecord::Relation [#<Ficha id: 1, num_ficha: 123456, created_at: "2022-04-13 02:51:10.671005000 +0000", updated_at: "2022-04-13 02:51:10.671005000 +0000">, #<Ficha id: 2, num_ficha: 234567, created_at: "2022-04-18 01:55:32.290606000 +0000", updated_at: "2022-04-18 01:55:32.290606000 +0000">, #<Ficha id: 3, num_ficha: 345678, created_at: "2022-04-18 01:55:46.947597000 +0000", updated_at: "2022-04-18 01:55:46.947597000 +0000">, #<Ficha id: 4, num_ficha: 3456789, created_at: "2022-04-18 01:55:56.275772000 +0000", updated_at: "2022-04-18 01:55:56.275772000 +0000">]>):
+    4:     </div>
+    5:     <%= f.submit "Guardar", class:"bo" %> 
+    6:         <div class="field">
+    7:         <%=  check_box_tag "fichas[]",@ficha %> <%= @ficha.num_ficha%>
+    8:     </div>
+    9: <% end %>
+  
+app/views/areas/cursos/_form.html.erb:7
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 22:24:39 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.8ms | Allocations: 209)
+  Rendered shared/_izq3.html.erb (Duration: 1.0ms | Allocations: 226)
+  Rendered areas/cursos/_form.html.erb (Duration: 6.5ms | Allocations: 6442)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 20.4ms | Allocations: 7444)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 7538)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.2ms | Allocations: 9158)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `ficha' for #<ActionView::Base:0x00000000018bf0>
+Did you mean?  @ficha):
+    4:     </div>
+    5:     <%= f.submit "Guardar", class:"bo" %> 
+    6:         <div class="field">
+    7:         <%=  check_box_tag "fichas[]",@ficha %> <%= ficha.num_ficha%>
+    8:     </div>
+    9: <% end %>
+  
+app/views/areas/cursos/_form.html.erb:7
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 22:24:48 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.5ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.5ms | Allocations: 209)
+  Rendered shared/_izq3.html.erb (Duration: 0.6ms | Allocations: 226)
+  Rendered areas/cursos/_form.html.erb (Duration: 6.6ms | Allocations: 6403)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 12.9ms | Allocations: 7405)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 7499)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.5ms | Allocations: 9168)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `fichas' for #<ActionView::Base:0x00000000018fd8>
+Did you mean?  @ficha):
+    4:     </div>
+    5:     <%= f.submit "Guardar", class:"bo" %> 
+    6:         <div class="field">
+    7:         <%=  check_box_tag "fichas[]",@ficha %> <%= fichas.num_ficha%>
+    8:     </div>
+    9: <% end %>
+  
+app/views/areas/cursos/_form.html.erb:7
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 22:24:58 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.6ms | Allocations: 209)
+  Rendered shared/_izq3.html.erb (Duration: 1.6ms | Allocations: 226)
+  Rendered areas/cursos/_form.html.erb (Duration: 11.9ms | Allocations: 5592)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 25.6ms | Allocations: 6594)
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 6688)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.2ms | Allocations: 8357)
+
+
+  
+ActionView::Template::Error (undefined method `num_ficha' for Ficha:Class):
+    4:     </div>
+    5:     <%= f.submit "Guardar", class:"bo" %> 
+    6:         <div class="field">
+    7:         <%=  check_box_tag "fichas[]",@ficha %> <%= Ficha.num_ficha%>
+    8:     </div>
+    9: <% end %>
+  
+app/views/areas/cursos/_form.html.erb:7
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 22:25:05 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.5ms | Allocations: 209)
+  Rendered shared/_izq3.html.erb (Duration: 0.6ms | Allocations: 226)
+  Rendered areas/cursos/_form.html.erb (Duration: 12.3ms | Allocations: 6442)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 21.1ms | Allocations: 7444)
+  Rendered layout layouts/application.html.erb (Duration: 23.1ms | Allocations: 7538)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.2ms | Allocations: 9207)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `ficha' for #<ActionView::Base:0x00000000019758>
+Did you mean?  @ficha):
+    4:     </div>
+    5:     <%= f.submit "Guardar", class:"bo" %> 
+    6:         <div class="field">
+    7:         <%=  check_box_tag "fichas[]",@ficha %> <%= ficha.num_ficha%>
+    8:     </div>
+    9: <% end %>
+  
+app/views/areas/cursos/_form.html.erb:7
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 22:25:29 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 3.6ms | Allocations: 209)
+  Rendered shared/_izq3.html.erb (Duration: 0.7ms | Allocations: 226)
+  Rendered areas/cursos/_form.html.erb (Duration: 1.5ms | Allocations: 798)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 14.7ms | Allocations: 1797)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 3378)
+Completed 200 OK in 31ms (Views: 25.6ms | ActiveRecord: 0.2ms | Allocations: 5076)
+
+
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 22:26:25 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.7ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.7ms | Allocations: 209)
+  Rendered shared/_izq3.html.erb (Duration: 8.6ms | Allocations: 226)
+  [1m[36mFicha Load (0.2ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/areas/cursos/new.html.erb:7
+  [1m[36mCACHE Ficha Load (0.0ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/areas/cursos/new.html.erb:7
+  Rendered areas/cursos/_form.html.erb (Duration: 15.8ms | Allocations: 7209)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 32.4ms | Allocations: 8211)
+  Rendered layout layouts/application.html.erb (Duration: 33.8ms | Allocations: 8305)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 0.9ms | Allocations: 9968)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<ActiveRecord::Relation [#<Ficha id: 1, num_ficha: 123456, created_at: "2022-04-13 02:51:10.671005000 +0000", updated_at: "2022-04-13 02:51:10.671005000 +0000">, #<Ficha id: 2, num_ficha: 234567, created_at: "2022-04-18 01:55:32.290606000 +0000", updated_at: "2022-04-18 01:55:32.290606000 +0000">, #<Ficha id: 3, num_ficha: 345678, created_at: "2022-04-18 01:55:46.947597000 +0000", updated_at: "2022-04-18 01:55:46.947597000 +0000">, #<Ficha id: 4, num_ficha: 3456789, created_at: "2022-04-18 01:55:56.275772000 +0000", updated_at: "2022-04-18 01:55:56.275772000 +0000">]>
+Did you mean?  to_ary
+               to_set):
+    1: <%= form_for [@area, @curso,@ficha] do |f| %>
+    2:     <div class="field">
+    3:         <%= f.text_field :nombre_curso, placeholder:"ingrese nombre del area", class:"in"  ,required:"true"%>
+    4:     </div>
+  
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 22:26:48 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.8ms | Allocations: 210)
+  Rendered shared/_izq3.html.erb (Duration: 1.1ms | Allocations: 226)
+  [1m[36mFicha Load (0.6ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/areas/cursos/new.html.erb:7
+  [1m[36mCACHE Ficha Load (0.0ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/areas/cursos/new.html.erb:7
+  Rendered areas/cursos/_form.html.erb (Duration: 17.2ms | Allocations: 7173)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 27.9ms | Allocations: 8176)
+  Rendered layout layouts/application.html.erb (Duration: 29.1ms | Allocations: 8270)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.8ms | Allocations: 9881)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<ActiveRecord::Relation [#<Ficha id: 1, num_ficha: 123456, created_at: "2022-04-13 02:51:10.671005000 +0000", updated_at: "2022-04-13 02:51:10.671005000 +0000">, #<Ficha id: 2, num_ficha: 234567, created_at: "2022-04-18 01:55:32.290606000 +0000", updated_at: "2022-04-18 01:55:32.290606000 +0000">, #<Ficha id: 3, num_ficha: 345678, created_at: "2022-04-18 01:55:46.947597000 +0000", updated_at: "2022-04-18 01:55:46.947597000 +0000">, #<Ficha id: 4, num_ficha: 3456789, created_at: "2022-04-18 01:55:56.275772000 +0000", updated_at: "2022-04-18 01:55:56.275772000 +0000">]>
+Did you mean?  to_ary
+               to_set):
+    1: <%= form_for [@area, @curso , @ficha] do |f| %>
+    2:     <div class="field">
+    3:         <%= f.text_field :nombre_curso, placeholder:"ingrese nombre del area", class:"in"  ,required:"true"%>
+    4:     </div>
+  
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 22:32:09 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  [1m[36mArea Load (0.4ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.8ms | Allocations: 209)
+  Rendered shared/_izq3.html.erb (Duration: 1.0ms | Allocations: 226)
+  Rendered areas/cursos/_form.html.erb (Duration: 3.4ms | Allocations: 3034)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 14.5ms | Allocations: 4036)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 4130)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 1.0ms | Allocations: 6327)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    3:         <%= f.text_field :nombre_curso, placeholder:"ingrese nombre del area", class:"in"  ,required:"true"%>
+    4:     </div>
+    5:     <%= f.submit "Guardar", class:"bo" %> 
+    6:     <% @fichas.each do |f| %>
+    7:         <div class="field">
+    8:         <%=  check_box_tag "fichas[]",ficha.id%> <%= ficha.num_ficha%>
+    9:     </div>
+  
+app/views/areas/cursos/_form.html.erb:6
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 22:32:25 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.4ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 1.6ms | Allocations: 209)
+  Rendered shared/_izq3.html.erb (Duration: 0.6ms | Allocations: 226)
+  [1m[36mFicha Load (0.4ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas"[0m
+  ↳ app/views/areas/cursos/_form.html.erb:6
+  Rendered areas/cursos/_form.html.erb (Duration: 15.8ms | Allocations: 7170)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 28.2ms | Allocations: 8172)
+  Rendered layout layouts/application.html.erb (Duration: 29.1ms | Allocations: 8266)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.8ms | Allocations: 9926)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `ficha' for #<ActionView::Base:0x0000000001a748>
+Did you mean?  @ficha):
+     5:     <%= f.submit "Guardar", class:"bo" %> 
+     6:     <% @ficha.each do |f| %>
+     7:         <div class="field">
+     8:         <%=  check_box_tag "fichas[]",ficha.id%> <%= ficha.num_ficha%>
+     9:     </div>
+    10:     <%end%>
+    11: <% end %>
+  
+app/views/areas/cursos/_form.html.erb:8
+app/views/areas/cursos/_form.html.erb:6
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 22:32:54 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.2ms | Allocations: 53)
+  Rendered shared/_izq3.html.erb (Duration: 0.2ms | Allocations: 76)
+  [1m[36mFicha Load (0.2ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas"[0m
+  ↳ app/views/areas/cursos/_form.html.erb:6
+  Rendered areas/cursos/_form.html.erb (Duration: 12.6ms | Allocations: 6734)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 14.4ms | Allocations: 7082)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 7170)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.4ms | Allocations: 8265)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `ficha' for #<ActionView::Base:0x0000000001aa40>
+Did you mean?  @ficha):
+     5:     <%= f.submit "Guardar", class:"bo" %> 
+     6:     <% @ficha.each do |f| %>
+     7:         <div class="field">
+     8:         <%=  check_box_tag "fichas[]",ficha.id%> <%= ficha.num_ficha%>
+     9:     </div>
+    10:     <%end%>
+    11: <% end %>
+  
+app/views/areas/cursos/_form.html.erb:8
+app/views/areas/cursos/_form.html.erb:6
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos" for ::1 at 2022-04-17 22:59:09 -0500
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  [1m[36mArea Load (0.4ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.9ms | Allocations: 217)
+  Rendered shared/_izq2.html.erb (Duration: 1.3ms | Allocations: 681)
+  [1m[36mCurso Load (0.4ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ?[0m  [["area_id", 7]]
+  ↳ app/views/shared/_cursos.html.erb:6
+  Rendered collection of areas/cursos/_curso.html.erb [2 times] (Duration: 1.7ms | Allocations: 692)
+  Rendered shared/_cursos.html.erb (Duration: 12.8ms | Allocations: 4617)
+  Rendered areas/cursos/index.html.erb within layouts/application (Duration: 22.2ms | Allocations: 6069)
+  Rendered layout layouts/application.html.erb (Duration: 31.8ms | Allocations: 7654)
+Completed 200 OK in 63ms (Views: 41.3ms | ActiveRecord: 1.4ms | Allocations: 14115)
+
+
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 22:59:14 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.3ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.4ms | Allocations: 79)
+  Rendered shared/_izq3.html.erb (Duration: 0.6ms | Allocations: 224)
+  [1m[36mFicha Load (0.4ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas"[0m
+  ↳ app/views/areas/cursos/_form.html.erb:6
+  Rendered areas/cursos/_form.html.erb (Duration: 14.7ms | Allocations: 8051)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 20.5ms | Allocations: 8861)
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 8954)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.6ms | Allocations: 11191)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `ficha' for #<ActionView::Base:0x00000000022ad8>
+Did you mean?  @fichas):
+     5:     <%= f.submit "Guardar", class:"bo" %> 
+     6:     <% @fichas.each do |f| %>
+     7:         <div class="field">
+     8:         <%=  check_box_tag "fichas[]",ficha.id%> <%= ficha.num_ficha%>
+     9:     </div>
+    10:     <%end%>
+    11: <% end %>
+  
+app/views/areas/cursos/_form.html.erb:8
+app/views/areas/cursos/_form.html.erb:6
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 23:13:38 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  [1m[36mArea Load (0.3ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.8ms | Allocations: 209)
+  Rendered shared/_izq3.html.erb (Duration: 1.2ms | Allocations: 226)
+  [1m[36mFicha Load (0.4ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas"[0m
+  ↳ app/views/areas/cursos/_form.html.erb:6
+  Rendered areas/cursos/_form.html.erb (Duration: 9.3ms | Allocations: 7157)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 17.5ms | Allocations: 8159)
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 8253)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 1.2ms | Allocations: 10433)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `ficha' for #<ActionView::Base:0x00000000022e98>
+Did you mean?  @fichas):
+     5:     <%= f.submit "Guardar", class:"bo" %> 
+     6:     <% @fichas.each do |f| %>
+     7:         <div class="field">
+     8:         <%=  check_box_tag "fichas[]",ficha.num_ficha%> 
+     9:     </div>
+    10:     <%end%>
+    11: <% end %>
+  
+app/views/areas/cursos/_form.html.erb:8
+app/views/areas/cursos/_form.html.erb:6
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 23:13:41 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.5ms | Allocations: 53)
+  Rendered shared/_izq3.html.erb (Duration: 0.3ms | Allocations: 76)
+  [1m[36mFicha Load (0.2ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas"[0m
+  ↳ app/views/areas/cursos/_form.html.erb:6
+  Rendered areas/cursos/_form.html.erb (Duration: 27.5ms | Allocations: 6734)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 30.1ms | Allocations: 7082)
+  Rendered layout layouts/application.html.erb (Duration: 31.9ms | Allocations: 7170)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.4ms | Allocations: 8265)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `ficha' for #<ActionView::Base:0x000000000231e0>
+Did you mean?  @fichas):
+     5:     <%= f.submit "Guardar", class:"bo" %> 
+     6:     <% @fichas.each do |f| %>
+     7:         <div class="field">
+     8:         <%=  check_box_tag "fichas[]",ficha.num_ficha%> 
+     9:     </div>
+    10:     <%end%>
+    11: <% end %>
+  
+app/views/areas/cursos/_form.html.erb:8
+app/views/areas/cursos/_form.html.erb:6
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 23:13:53 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 2.1ms | Allocations: 209)
+  Rendered shared/_izq3.html.erb (Duration: 1.1ms | Allocations: 226)
+  [1m[36mFicha Load (0.6ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas"[0m
+  ↳ app/views/areas/cursos/_form.html.erb:6
+  Rendered areas/cursos/_form.html.erb (Duration: 6.3ms | Allocations: 3728)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 17.3ms | Allocations: 4730)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 4824)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.8ms | Allocations: 6347)
+
+
+  
+ActionView::Template::Error (undefined method `num_ficha' for nil:NilClass):
+     5:     <%= f.submit "Guardar", class:"bo" %> 
+     6:     <% @fichas.each do |f| %>
+     7:         <div class="field">
+     8:         <%=  check_box_tag "fichas[]",@ficha.num_ficha%> 
+     9:     </div>
+    10:     <%end%>
+    11: <% end %>
+  
+app/views/areas/cursos/_form.html.erb:8
+app/views/areas/cursos/_form.html.erb:6
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 23:14:04 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.8ms | Allocations: 209)
+  Rendered shared/_izq3.html.erb (Duration: 0.8ms | Allocations: 226)
+  [1m[36mFicha Load (0.3ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas"[0m
+  ↳ app/views/areas/cursos/_form.html.erb:6
+  Rendered areas/cursos/_form.html.erb (Duration: 6.1ms | Allocations: 1574)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 16.6ms | Allocations: 2574)
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 4153)
+Completed 200 OK in 44ms (Views: 33.7ms | ActiveRecord: 0.5ms | Allocations: 5808)
+
+
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 23:14:26 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.7ms | Allocations: 209)
+  Rendered shared/_izq3.html.erb (Duration: 0.6ms | Allocations: 226)
+  Rendered areas/cursos/_form.html.erb (Duration: 2.5ms | Allocations: 801)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 9.7ms | Allocations: 1800)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 3370)
+Completed 200 OK in 29ms (Views: 22.6ms | ActiveRecord: 0.2ms | Allocations: 5033)
+
+
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 23:14:27 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.2ms | Allocations: 53)
+  Rendered shared/_izq3.html.erb (Duration: 0.2ms | Allocations: 76)
+  Rendered areas/cursos/_form.html.erb (Duration: 0.7ms | Allocations: 456)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 801)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 1939)
+Completed 200 OK in 15ms (Views: 10.4ms | ActiveRecord: 0.2ms | Allocations: 3090)
+
+
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 23:14:27 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.3ms | Allocations: 53)
+  Rendered shared/_izq3.html.erb (Duration: 0.3ms | Allocations: 76)
+  Rendered areas/cursos/_form.html.erb (Duration: 1.0ms | Allocations: 432)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 777)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 1915)
+Completed 200 OK in 14ms (Views: 10.2ms | ActiveRecord: 0.2ms | Allocations: 2928)
+
+
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 23:14:28 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.2ms | Allocations: 53)
+  Rendered shared/_izq3.html.erb (Duration: 0.2ms | Allocations: 76)
+  Rendered areas/cursos/_form.html.erb (Duration: 0.9ms | Allocations: 462)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 807)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 1945)
+Completed 200 OK in 14ms (Views: 9.0ms | ActiveRecord: 0.2ms | Allocations: 2958)
+
+
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 23:14:28 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.2ms | Allocations: 53)
+  Rendered shared/_izq3.html.erb (Duration: 0.2ms | Allocations: 76)
+  Rendered areas/cursos/_form.html.erb (Duration: 0.7ms | Allocations: 462)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 807)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 1945)
+Completed 200 OK in 14ms (Views: 9.8ms | ActiveRecord: 0.2ms | Allocations: 2961)
+
+
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 23:15:00 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.4ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.7ms | Allocations: 209)
+  Rendered shared/_izq3.html.erb (Duration: 0.6ms | Allocations: 226)
+  Rendered areas/cursos/_form.html.erb (Duration: 1.3ms | Allocations: 791)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 8.5ms | Allocations: 1790)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 3360)
+Completed 200 OK in 30ms (Views: 21.4ms | ActiveRecord: 0.4ms | Allocations: 4923)
+
+
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 23:15:13 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.7ms | Allocations: 209)
+  Rendered shared/_izq3.html.erb (Duration: 0.6ms | Allocations: 226)
+  [1m[36mFicha Load (0.2ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas"[0m
+  ↳ app/views/areas/cursos/_form.html.erb:6
+  Rendered areas/cursos/_form.html.erb (Duration: 3.8ms | Allocations: 1558)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 11.6ms | Allocations: 2557)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 4125)
+Completed 200 OK in 28ms (Views: 22.4ms | ActiveRecord: 0.4ms | Allocations: 5817)
+
+
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 23:21:32 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  [1m[36mArea Load (0.3ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.3ms | Allocations: 112)
+  Rendered shared/_izq3.html.erb (Duration: 0.5ms | Allocations: 98)
+  [1m[36mFicha Load (2.4ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas"[0m
+  ↳ app/views/areas/cursos/_form.html.erb:6
+  Rendered areas/cursos/_form.html.erb (Duration: 6.8ms | Allocations: 2264)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 15.5ms | Allocations: 2701)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 4018)
+Completed 200 OK in 56ms (Views: 19.7ms | ActiveRecord: 3.2ms | Allocations: 13226)
+
+
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 23:23:31 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.6ms | Allocations: 217)
+  Rendered shared/_izq3.html.erb (Duration: 0.6ms | Allocations: 226)
+  [1m[36mFicha Load (0.2ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas"[0m
+  ↳ app/views/areas/cursos/_form.html.erb:6
+  Rendered areas/cursos/_form.html.erb (Duration: 5.9ms | Allocations: 3475)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 12.8ms | Allocations: 4490)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 4584)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 3.6ms | Allocations: 14870)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 1)):
+     5:     <%= f.submit "Guardar", class:"bo" %> 
+     6:     <% @fichas.each do |f| %>
+     7:         <div class="field">
+     8:         <%=  f.association :fichas, as: :check_boxes, label_method: :num_ficha%> 
+     9:     </div>
+    10:     <%end%>
+    11: <% end %>
+  
+app/views/areas/cursos/_form.html.erb:8
+app/views/areas/cursos/_form.html.erb:6
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 23:27:29 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.6ms | Allocations: 209)
+  Rendered shared/_izq3.html.erb (Duration: 0.6ms | Allocations: 226)
+  [1m[36mFicha Load (0.2ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas"[0m
+  ↳ app/views/areas/cursos/_form.html.erb:6
+  Rendered areas/cursos/_form.html.erb (Duration: 4.7ms | Allocations: 2308)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 12.3ms | Allocations: 3310)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 3404)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.4ms | Allocations: 5030)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 1)):
+     5:     <%= f.submit "Guardar", class:"bo" %> 
+     6:     <% @fichas.each do |f| %>
+     7:         <div class="field">
+     8:         <%=  f.association :fichas, as: :check_boxes, label_method: :num_ficha %> 
+     9:     </div>
+    10:     <%end%>
+    11: <% end %>
+  
+app/views/areas/cursos/_form.html.erb:8
+app/views/areas/cursos/_form.html.erb:6
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 23:27:32 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.9ms | Allocations: 53)
+  Rendered shared/_izq3.html.erb (Duration: 0.3ms | Allocations: 76)
+  [1m[36mFicha Load (0.2ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas"[0m
+  ↳ app/views/areas/cursos/_form.html.erb:6
+  Rendered areas/cursos/_form.html.erb (Duration: 3.1ms | Allocations: 1930)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 2278)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 2366)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms | Allocations: 3461)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 1)):
+     5:     <%= f.submit "Guardar", class:"bo" %> 
+     6:     <% @fichas.each do |f| %>
+     7:         <div class="field">
+     8:         <%=  f.association :fichas, as: :check_boxes, label_method: :num_ficha %> 
+     9:     </div>
+    10:     <%end%>
+    11: <% end %>
+  
+app/views/areas/cursos/_form.html.erb:8
+app/views/areas/cursos/_form.html.erb:6
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 23:27:34 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.4ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.2ms | Allocations: 53)
+  Rendered shared/_izq3.html.erb (Duration: 0.2ms | Allocations: 76)
+  [1m[36mFicha Load (0.2ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas"[0m
+  ↳ app/views/areas/cursos/_form.html.erb:6
+  Rendered areas/cursos/_form.html.erb (Duration: 2.7ms | Allocations: 1930)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2278)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 2366)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.6ms | Allocations: 3358)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 1)):
+     5:     <%= f.submit "Guardar", class:"bo" %> 
+     6:     <% @fichas.each do |f| %>
+     7:         <div class="field">
+     8:         <%=  f.association :fichas, as: :check_boxes, label_method: :num_ficha %> 
+     9:     </div>
+    10:     <%end%>
+    11: <% end %>
+  
+app/views/areas/cursos/_form.html.erb:8
+app/views/areas/cursos/_form.html.erb:6
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 23:28:11 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.7ms | Allocations: 209)
+  Rendered shared/_izq3.html.erb (Duration: 1.0ms | Allocations: 226)
+  Rendered areas/cursos/_form.html.erb (Duration: 3.0ms | Allocations: 3292)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 11.3ms | Allocations: 4294)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 4388)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.2ms | Allocations: 5920)
+
+
+  
+ActionView::Template::Error (undefined method `association' for #<ActionView::Helpers::FormBuilder:0x0000022cc809b180 @nested_child_index={}, @options={:allow_method_names_outside_object=>false, :skip_default_ids=>false, :html=>{:class=>"new_curso", :id=>"new_curso"}, :local=>true}, @template=#<ActionView::Base:0x000000000344e0>, @object=#<Curso id: nil, area_id: 7, nombre_curso: nil, des_curso: nil, created_at: nil, updated_at: nil>, @object_name="curso", @default_options={:skip_default_ids=>false, :allow_method_names_outside_object=>false}, @default_html_options={}, @multipart=nil, @index=nil>):
+     5:     <%= f.submit "Guardar", class:"bo" %> 
+     6:    
+     7:         <div class="field">
+     8:         <%=  f.association :fichas, as: :check_boxes, label_method: :num_ficha %> 
+     9:         </div>
+    10:  
+    11: <% end %>
+  
+app/views/areas/cursos/_form.html.erb:8
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 23:29:48 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.5ms | Allocations: 217)
+  Rendered shared/_izq3.html.erb (Duration: 0.6ms | Allocations: 226)
+  Rendered areas/cursos/_form.html.erb (Duration: 3.3ms | Allocations: 3233)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 9.8ms | Allocations: 4248)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 4342)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 2.5ms | Allocations: 13554)
+
+
+  
+ActionView::Template::Error (undefined method `association' for #<ActionView::Helpers::FormBuilder:0x0000022cca469008 @nested_child_index={}, @options={:allow_method_names_outside_object=>false, :skip_default_ids=>false, :html=>{:class=>"new_curso", :id=>"new_curso"}, :local=>true}, @template=#<ActionView::Base:0x0000000003c488>, @object=#<Curso id: nil, area_id: 7, nombre_curso: nil, des_curso: nil, created_at: nil, updated_at: nil>, @object_name="curso", @default_options={:skip_default_ids=>false, :allow_method_names_outside_object=>false}, @default_html_options={}, @multipart=nil, @index=nil>):
+     5:     <%= f.submit "Guardar", class:"bo" %> 
+     6:    
+     7:         <div class="field">
+     8:         <%= f.association :fichas, as: :check_boxes, label_method: :num_ficha %> 
+     9:         </div>
+    10:  
+    11: <% end %>
+  
+app/views/areas/cursos/_form.html.erb:8
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 23:35:50 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  [1m[36mArea Load (0.3ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.4ms | Allocations: 112)
+  Rendered shared/_izq3.html.erb (Duration: 0.2ms | Allocations: 98)
+  Rendered areas/cursos/_form.html.erb (Duration: 2.4ms | Allocations: 3036)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 3476)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 3570)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.7ms | Allocations: 11616)
+
+
+  
+ActionView::Template::Error (undefined method `association' for #<ActionView::Helpers::FormBuilder:0x0000022cc9606718 @nested_child_index={}, @options={:allow_method_names_outside_object=>false, :skip_default_ids=>false, :html=>{:class=>"new_curso", :id=>"new_curso"}, :local=>true}, @template=#<ActionView::Base:0x00000000044390>, @object=#<Curso id: nil, area_id: 7, nombre_curso: nil, des_curso: nil, created_at: nil, updated_at: nil>, @object_name="curso", @default_options={:skip_default_ids=>false, :allow_method_names_outside_object=>false}, @default_html_options={}, @multipart=nil, @index=nil>):
+     5:     <%= f.submit "Guardar", class:"bo" %> 
+     6:    
+     7:         <div class="field">
+     8:         <%= f.association :fichas, as: :check_boxes, label_method: :num_ficha %> 
+     9:         </div>
+    10:  
+    11: <% end %>
+  
+app/views/areas/cursos/_form.html.erb:8
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 23:35:55 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.1ms | Allocations: 53)
+  Rendered shared/_izq3.html.erb (Duration: 0.2ms | Allocations: 76)
+  Rendered areas/cursos/_form.html.erb (Duration: 4.1ms | Allocations: 2973)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 3321)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 3409)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.2ms | Allocations: 4526)
+
+
+  
+ActionView::Template::Error (undefined method `association' for #<ActionView::Helpers::FormBuilder:0x0000022ccbf88140 @nested_child_index={}, @options={:allow_method_names_outside_object=>false, :skip_default_ids=>false, :html=>{:class=>"new_curso", :id=>"new_curso"}, :local=>true}, @template=#<ActionView::Base:0x000000000446d8>, @object=#<Curso id: nil, area_id: 7, nombre_curso: nil, des_curso: nil, created_at: nil, updated_at: nil>, @object_name="curso", @default_options={:skip_default_ids=>false, :allow_method_names_outside_object=>false}, @default_html_options={}, @multipart=nil, @index=nil>):
+     5:     <%= f.submit "Guardar", class:"bo" %> 
+     6:    
+     7:         <div class="field">
+     8:         <%= f.association :fichas, as: :check_boxes, label_method: :num_ficha %> 
+     9:         </div>
+    10:  
+    11: <% end %>
+  
+app/views/areas/cursos/_form.html.erb:8
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 23:36:41 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.6ms | Allocations: 209)
+  Rendered shared/_izq3.html.erb (Duration: 1.0ms | Allocations: 226)
+  Rendered areas/cursos/_form.html.erb (Duration: 15.6ms | Allocations: 5654)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 23.3ms | Allocations: 6656)
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | Allocations: 6750)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.2ms | Allocations: 8271)
+
+
+  
+ActionView::Template::Error (undefined method `simple_form_for' for #<ActionView::Base:0x00000000044a70>
+Did you mean?  simple_format):
+    1: <%= simple_form_for [@area, @curso] do |f| %>
+    2:     <div class="field">
+    3:         <%= f.text_field :nombre_curso, placeholder:"ingrese nombre del area", class:"in"  ,required:"true"%>
+    4:     </div>
+  
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 23:36:50 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.7ms | Allocations: 209)
+  Rendered shared/_izq3.html.erb (Duration: 0.6ms | Allocations: 226)
+  Rendered areas/cursos/_form.html.erb (Duration: 2.7ms | Allocations: 3269)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 10.8ms | Allocations: 4271)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 4365)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.2ms | Allocations: 6021)
+
+
+  
+ActionView::Template::Error (undefined method `association' for #<ActionView::Helpers::FormBuilder:0x0000022ccab692b8 @nested_child_index={}, @options={:allow_method_names_outside_object=>false, :skip_default_ids=>false, :html=>{:class=>"new_curso", :id=>"new_curso"}, :local=>true}, @template=#<ActionView::Base:0x00000000044e80>, @object=#<Curso id: nil, area_id: 7, nombre_curso: nil, des_curso: nil, created_at: nil, updated_at: nil>, @object_name="curso", @default_options={:skip_default_ids=>false, :allow_method_names_outside_object=>false}, @default_html_options={}, @multipart=nil, @index=nil>):
+     5:     <%= f.submit "Guardar", class:"bo" %> 
+     6:    
+     7:         <div class="field">
+     8:         <%= f.association :fichas, as: :check_boxes, label_method: :num_ficha %> 
+     9:         </div>
+    10:  
+    11: <% end %>
+  
+app/views/areas/cursos/_form.html.erb:8
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 23:37:35 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.5ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.6ms | Allocations: 209)
+  Rendered shared/_izq3.html.erb (Duration: 0.6ms | Allocations: 226)
+  Rendered areas/cursos/_form.html.erb (Duration: 4.3ms | Allocations: 3269)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 11.4ms | Allocations: 4271)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 4365)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.5ms | Allocations: 6021)
+
+
+  
+ActionView::Template::Error (undefined method `association' for #<ActionView::Helpers::FormBuilder:0x0000022cca2789b0 @nested_child_index={}, @options={:allow_method_names_outside_object=>false, :skip_default_ids=>false, :html=>{:class=>"new_curso", :id=>"new_curso"}, :local=>true}, @template=#<ActionView::Base:0x00000000045218>, @object=#<Curso id: nil, area_id: 7, nombre_curso: nil, des_curso: nil, created_at: nil, updated_at: nil>, @object_name="curso", @default_options={:skip_default_ids=>false, :allow_method_names_outside_object=>false}, @default_html_options={}, @multipart=nil, @index=nil>):
+     5:     <%= f.submit "Guardar", class:"bo" %> 
+     6:    
+     7:         <div class="field">
+     8:         <%= f.association :fichas, as: :check_box_tag, label_method: :num_ficha %> 
+     9:         </div>
+    10:  
+    11: <% end %>
+  
+app/views/areas/cursos/_form.html.erb:8
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 23:40:00 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.7ms | Allocations: 209)
+  Rendered shared/_izq3.html.erb (Duration: 0.6ms | Allocations: 226)
+  Rendered areas/cursos/_form.html.erb (Duration: 12.0ms | Allocations: 5655)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 22.3ms | Allocations: 6657)
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | Allocations: 6751)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.2ms | Allocations: 8407)
+
+
+  
+ActionView::Template::Error (undefined method `simple_form_for' for #<ActionView::Base:0x000000000455d8>
+Did you mean?  simple_format):
+    1: <%= simple_form_for [@area, @curso] do |f| %>
+    2:     <div class="field">
+    3:         <%= f.text_field :nombre_curso, placeholder:"ingrese nombre del area", class:"in"  ,required:"true"%>
+    4:     </div>
+  
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 23:40:22 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.2ms | Allocations: 53)
+  Rendered shared/_izq3.html.erb (Duration: 0.2ms | Allocations: 76)
+  Rendered areas/cursos/_form.html.erb (Duration: 11.8ms | Allocations: 5427)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 14.4ms | Allocations: 5775)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 5863)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.2ms | Allocations: 6979)
+
+
+  
+ActionView::Template::Error (undefined method `simple_form_for' for #<ActionView::Base:0x00000000045920>
+Did you mean?  simple_format):
+    1: <%= simple_form_for [@area, @curso] do |f| %>
+    2:     <div class="field">
+    3:         <%= f.text_field :nombre_curso, placeholder:"ingrese nombre del area", class:"in"  ,required:"true"%>
+    4:     </div>
+  
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 23:40:25 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.5ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.2ms | Allocations: 53)
+  Rendered shared/_izq3.html.erb (Duration: 0.3ms | Allocations: 76)
+  Rendered areas/cursos/_form.html.erb (Duration: 12.6ms | Allocations: 5427)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 14.9ms | Allocations: 5775)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 5863)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.5ms | Allocations: 6843)
+
+
+  
+ActionView::Template::Error (undefined method `simple_form_for' for #<ActionView::Base:0x00000000045c68>
+Did you mean?  simple_format):
+    1: <%= simple_form_for [@area, @curso] do |f| %>
+    2:     <div class="field">
+    3:         <%= f.text_field :nombre_curso, placeholder:"ingrese nombre del area", class:"in"  ,required:"true"%>
+    4:     </div>
+  
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 23:40:42 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.7ms | Allocations: 209)
+  Rendered shared/_izq3.html.erb (Duration: 0.8ms | Allocations: 226)
+  Rendered areas/cursos/_form.html.erb (Duration: 3.1ms | Allocations: 3269)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 10.0ms | Allocations: 4271)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 4365)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.2ms | Allocations: 5885)
+
+
+  
+ActionView::Template::Error (undefined method `association' for #<ActionView::Helpers::FormBuilder:0x0000022cccd63be8 @nested_child_index={}, @options={:allow_method_names_outside_object=>false, :skip_default_ids=>false, :html=>{:class=>"new_curso", :id=>"new_curso"}, :local=>true}, @template=#<ActionView::Base:0x00000000046028>, @object=#<Curso id: nil, area_id: 7, nombre_curso: nil, des_curso: nil, created_at: nil, updated_at: nil>, @object_name="curso", @default_options={:skip_default_ids=>false, :allow_method_names_outside_object=>false}, @default_html_options={}, @multipart=nil, @index=nil>):
+     5:     <%= f.submit "Guardar", class:"bo" %> 
+     6:    
+     7:         <div class="field">
+     8:         <%= f.association :fichas, as: :check_box_tag, label_method: :num_ficha %> 
+     9:         </div>
+    10:  
+    11: <% end %>
+  
+app/views/areas/cursos/_form.html.erb:8
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-17 23:40:45 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.1ms | Allocations: 53)
+  Rendered shared/_izq3.html.erb (Duration: 0.2ms | Allocations: 76)
+  Rendered areas/cursos/_form.html.erb (Duration: 2.2ms | Allocations: 2973)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 3321)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 3409)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.2ms | Allocations: 4525)
+
+
+  
+ActionView::Template::Error (undefined method `association' for #<ActionView::Helpers::FormBuilder:0x0000022ccc534440 @nested_child_index={}, @options={:allow_method_names_outside_object=>false, :skip_default_ids=>false, :html=>{:class=>"new_curso", :id=>"new_curso"}, :local=>true}, @template=#<ActionView::Base:0x00000000046348>, @object=#<Curso id: nil, area_id: 7, nombre_curso: nil, des_curso: nil, created_at: nil, updated_at: nil>, @object_name="curso", @default_options={:skip_default_ids=>false, :allow_method_names_outside_object=>false}, @default_html_options={}, @multipart=nil, @index=nil>):
+     5:     <%= f.submit "Guardar", class:"bo" %> 
+     6:    
+     7:         <div class="field">
+     8:         <%= f.association :fichas, as: :check_box_tag, label_method: :num_ficha %> 
+     9:         </div>
+    10:  
+    11: <% end %>
+  
+app/views/areas/cursos/_form.html.erb:8
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/" for ::1 at 2022-04-18 09:47:52 -0500
+  [1m[35m (10.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_izq.html.erb (Duration: 10.2ms | Allocations: 223)
+  Rendered home/index.html.erb within layouts/application (Duration: 29.5ms | Allocations: 1001)
+  Rendered layout layouts/application.html.erb (Duration: 339.7ms | Allocations: 23718)
+Completed 200 OK in 532ms (Views: 378.8ms | ActiveRecord: 1.2ms | Allocations: 36042)
+
+
+Started GET "/areas" for ::1 at 2022-04-18 09:47:56 -0500
+Processing by AreasController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering areas/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 6.9ms | Allocations: 216)
+  Rendered shared/_izq.html.erb (Duration: 0.2ms | Allocations: 78)
+  [1m[36mArea Load (0.3ms)[0m  [1m[34mSELECT "areas".* FROM "areas"[0m
+  ↳ app/views/shared/_areas.html.erb:9
+  Rendered collection of areas/_area.html.erb [3 times] (Duration: 4.3ms | Allocations: 510)
+  Rendered shared/_areas.html.erb (Duration: 17.1ms | Allocations: 3591)
+  Rendered areas/index.html.erb within layouts/application (Duration: 31.8ms | Allocations: 4399)
+  Rendered layout layouts/application.html.erb (Duration: 36.5ms | Allocations: 5948)
+Completed 200 OK in 85ms (Views: 40.0ms | ActiveRecord: 1.4ms | Allocations: 7860)
+
+
+Started GET "/areas/7/cursos" for ::1 at 2022-04-18 09:47:57 -0500
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.3ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.2ms | Allocations: 107)
+  Rendered shared/_izq2.html.erb (Duration: 12.9ms | Allocations: 712)
+  [1m[36mCurso Load (0.3ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ?[0m  [["area_id", 7]]
+  ↳ app/views/shared/_cursos.html.erb:6
+  Rendered collection of areas/cursos/_curso.html.erb [2 times] (Duration: 5.2ms | Allocations: 799)
+  Rendered shared/_cursos.html.erb (Duration: 66.3ms | Allocations: 6768)
+  Rendered areas/cursos/index.html.erb within layouts/application (Duration: 87.6ms | Allocations: 8101)
+  Rendered layout layouts/application.html.erb (Duration: 94.8ms | Allocations: 9408)
+Completed 200 OK in 180ms (Views: 97.9ms | ActiveRecord: 1.5ms | Allocations: 14425)
+
+
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-18 09:47:59 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.3ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered shared/_izq3.html.erb (Duration: 11.9ms | Allocations: 237)
+  Rendered areas/cursos/_form.html.erb (Duration: 27.7ms | Allocations: 6084)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 47.6ms | Allocations: 6876)
+  Rendered layout layouts/application.html.erb (Duration: 48.4ms | Allocations: 6967)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 0.3ms | Allocations: 8287)
+
+
+  
+ActionView::Template::Error (undefined method `simple_form_for' for #<ActionView::Base:0x0000000000f500>
+Did you mean?  simple_format):
+    1: <%= simple_form_for [@area, @curso] do |f| %>
+    2:     <div class="field">
+    3:         <%= f.text_field :nombre_curso, placeholder:"ingrese nombre del area", class:"in"  ,required:"true"%>
+    4:     </div>
+  
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-18 09:49:06 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.8ms | Allocations: 209)
+  Rendered shared/_izq3.html.erb (Duration: 0.6ms | Allocations: 226)
+  Rendered areas/cursos/_form.html.erb (Duration: 11.1ms | Allocations: 5653)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 19.1ms | Allocations: 6653)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 6748)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.2ms | Allocations: 8429)
+
+
+  
+ActionView::Template::Error (undefined method `simple_form_for' for #<ActionView::Base:0x0000000000f910>
+Did you mean?  simple_format):
+    1: <%= simple_form_for [@area, @curso] do |f| %>
+    2:     <div class="field">
+    3:         <%= f.text_field :nombre_curso, placeholder:"ingrese nombre del area", class:"in"  ,required:"true"%>
+    4:     </div>
+  
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos" for ::1 at 2022-04-18 09:49:11 -0500
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.1ms | Allocations: 53)
+  Rendered shared/_izq2.html.erb (Duration: 1.1ms | Allocations: 564)
+  [1m[36mCurso Load (0.3ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ?[0m  [["area_id", 7]]
+  ↳ app/views/shared/_cursos.html.erb:6
+  Rendered collection of areas/cursos/_curso.html.erb [2 times] (Duration: 1.3ms | Allocations: 672)
+  Rendered shared/_cursos.html.erb (Duration: 7.1ms | Allocations: 1696)
+  Rendered areas/cursos/index.html.erb within layouts/application (Duration: 12.6ms | Allocations: 2770)
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 4335)
+Completed 200 OK in 24ms (Views: 19.1ms | ActiveRecord: 0.5ms | Allocations: 5347)
+
+
+Started GET "/areas/7/cursos" for 127.0.0.1 at 2022-04-18 09:49:28 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.3ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.7ms | Allocations: 304)
+  Rendered shared/_izq2.html.erb (Duration: 4.2ms | Allocations: 959)
+  [1m[36mCurso Load (0.3ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ?[0m  [["area_id", 7]]
+  ↳ app/views/shared/_cursos.html.erb:6
+  Rendered collection of areas/cursos/_curso.html.erb [2 times] (Duration: 1.3ms | Allocations: 824)
+  Rendered shared/_cursos.html.erb (Duration: 17.2ms | Allocations: 6839)
+  Rendered areas/cursos/index.html.erb within layouts/application (Duration: 29.5ms | Allocations: 8897)
+  Rendered layout layouts/application.html.erb (Duration: 95.4ms | Allocations: 31615)
+Completed 200 OK in 149ms (Views: 102.7ms | ActiveRecord: 2.6ms | Allocations: 44894)
+
+
+Started GET "/areas/7/cursos/new" for 127.0.0.1 at 2022-04-18 09:49:41 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.1ms | Allocations: 77)
+  Rendered shared/_izq3.html.erb (Duration: 0.6ms | Allocations: 243)
+  Rendered areas/cursos/_form.html.erb (Duration: 476.0ms | Allocations: 29835)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 481.4ms | Allocations: 30676)
+  Rendered layout layouts/application.html.erb (Duration: 482.1ms | Allocations: 30767)
+Completed 500 Internal Server Error in 489ms (ActiveRecord: 0.2ms | Allocations: 32155)
+
+
+  
+ActionView::Template::Error (No input found for check_box_tag):
+     5:     <%= f.submit "Guardar", class:"bo" %> 
+     6:    
+     7:         <div class="field">
+     8:         <%= f.association :fichas, as: :check_box_tag, label_method: :num_ficha %> 
+     9:         </div>
+    10:  
+    11: <% end %>
+  
+app/views/areas/cursos/_form.html.erb:8
+app/views/areas/cursos/_form.html.erb:1
+app/views/areas/cursos/new.html.erb:7
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-18 09:50:15 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.5ms | Allocations: 209)
+  Rendered shared/_izq3.html.erb (Duration: 0.7ms | Allocations: 226)
+  [1m[36mFicha Load (0.3ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas"[0m
+  ↳ app/views/areas/cursos/_form.html.erb:8
+  Rendered areas/cursos/_form.html.erb (Duration: 253.5ms | Allocations: 30344)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 262.1ms | Allocations: 31354)
+  Rendered layout layouts/application.html.erb (Duration: 267.6ms | Allocations: 32964)
+Completed 200 OK in 278ms (Views: 271.2ms | ActiveRecord: 1.5ms | Allocations: 34683)
+
+
+Started POST "/areas/7/cursos" for ::1 at 2022-04-18 09:51:48 -0500
+Processing by Areas::CursosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "curso"=>{"nombre_curso"=>"arroz", "ficha_ids"=>["", "1"]}, "commit"=>"Guardar", "area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+[31mUnpermitted parameter: :ficha_ids. Context: { controller: Areas::CursosController, action: create, request: #<ActionDispatch::Request:0x0000023807903198>, params: {"authenticity_token"=>"[FILTERED]", "curso"=>{"nombre_curso"=>"arroz", "ficha_ids"=>["", "1"]}, "commit"=>"Guardar", "controller"=>"areas/cursos", "action"=>"create", "area_id"=>"7"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/areas/cursos_controller.rb:17:in `create'
+  [1m[36mCurso Create (1.8ms)[0m  [1m[32mINSERT INTO "cursos" ("area_id", "nombre_curso", "des_curso", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["area_id", 7], ["nombre_curso", "arroz"], ["des_curso", nil], ["created_at", "2022-04-18 14:51:48.363429"], ["updated_at", "2022-04-18 14:51:48.363429"]]
+  ↳ app/controllers/areas/cursos_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (10.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/areas/cursos_controller.rb:17:in `create'
+Redirected to http://localhost:3000/areas/7/cursos
+Completed 302 Found in 25ms (ActiveRecord: 12.8ms | Allocations: 5087)
+
+
+Started GET "/areas/7/cursos" for ::1 at 2022-04-18 09:51:48 -0500
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.1ms | Allocations: 67)
+  Rendered shared/_izq2.html.erb (Duration: 1.0ms | Allocations: 566)
+  [1m[36mCurso Load (0.3ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ?[0m  [["area_id", 7]]
+  ↳ app/views/shared/_cursos.html.erb:6
+  Rendered collection of areas/cursos/_curso.html.erb [3 times] (Duration: 1.4ms | Allocations: 879)
+  Rendered shared/_cursos.html.erb (Duration: 6.1ms | Allocations: 1892)
+  Rendered areas/cursos/index.html.erb within layouts/application (Duration: 12.6ms | Allocations: 3006)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 4241)
+Completed 200 OK in 23ms (Views: 17.9ms | ActiveRecord: 0.4ms | Allocations: 5210)
+
+
+Started GET "/fichas" for ::1 at 2022-04-18 09:51:50 -0500
+  
+ActionController::RoutingError (uninitialized constant FichasController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  FichaController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mFicha Load (0.3ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas"[0m
+  [1m[36mCursoFicha Load (0.4ms)[0m  [1m[34mSELECT "curso_fichas".* FROM "curso_fichas"[0m
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-18 09:53:14 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.2ms | Allocations: 67)
+  Rendered shared/_izq3.html.erb (Duration: 0.3ms | Allocations: 90)
+  [1m[36mFicha Load (0.2ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas"[0m
+  ↳ app/views/areas/cursos/_form.html.erb:8
+  Rendered areas/cursos/_form.html.erb (Duration: 9.5ms | Allocations: 8725)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 13.1ms | Allocations: 9097)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 10343)
+Completed 200 OK in 24ms (Views: 19.3ms | ActiveRecord: 0.5ms | Allocations: 11511)
+
+
+Started POST "/areas/7/cursos" for ::1 at 2022-04-18 09:53:17 -0500
+Processing by Areas::CursosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "curso"=>{"nombre_curso"=>"ADSI", "ficha_ids"=>["", "3"]}, "commit"=>"Guardar", "area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+[31mUnpermitted parameter: :ficha_ids. Context: { controller: Areas::CursosController, action: create, request: #<ActionDispatch::Request:0x000002380819b878>, params: {"authenticity_token"=>"[FILTERED]", "curso"=>{"nombre_curso"=>"ADSI", "ficha_ids"=>["", "3"]}, "commit"=>"Guardar", "controller"=>"areas/cursos", "action"=>"create", "area_id"=>"7"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/areas/cursos_controller.rb:17:in `create'
+  [1m[36mCurso Create (1.0ms)[0m  [1m[32mINSERT INTO "cursos" ("area_id", "nombre_curso", "des_curso", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["area_id", 7], ["nombre_curso", "ADSI"], ["des_curso", nil], ["created_at", "2022-04-18 14:53:17.957754"], ["updated_at", "2022-04-18 14:53:17.957754"]]
+  ↳ app/controllers/areas/cursos_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (10.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/areas/cursos_controller.rb:17:in `create'
+Redirected to http://localhost:3000/areas/7/cursos
+Completed 302 Found in 24ms (ActiveRecord: 12.0ms | Allocations: 3173)
+
+
+Started GET "/areas/7/cursos" for ::1 at 2022-04-18 09:53:18 -0500
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.2ms | Allocations: 53)
+  Rendered shared/_izq2.html.erb (Duration: 0.6ms | Allocations: 373)
+  [1m[36mCurso Load (0.3ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ?[0m  [["area_id", 7]]
+  ↳ app/views/shared/_cursos.html.erb:6
+  Rendered collection of areas/cursos/_curso.html.erb [4 times] (Duration: 1.4ms | Allocations: 909)
+  Rendered shared/_cursos.html.erb (Duration: 4.4ms | Allocations: 1763)
+  Rendered areas/cursos/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 2408)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 3546)
+Completed 200 OK in 16ms (Views: 12.5ms | ActiveRecord: 0.5ms | Allocations: 4396)
+
+
+Started DELETE "/areas/7/cursos/19" for ::1 at 2022-04-18 09:53:18 -0500
+Processing by Areas::CursosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "area_id"=>"7", "id"=>"19"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  [1m[36mCurso Load (0.3ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ? AND "cursos"."id" = ? LIMIT ?[0m  [["area_id", 7], ["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:25:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/areas/cursos_controller.rb:26:in `destroy'
+  [1m[36mFicha Load (0.2ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas" INNER JOIN "curso_fichas" ON "fichas"."id" = "curso_fichas"."ficha_id" WHERE "curso_fichas"."curso_id" = ?[0m  [["curso_id", 19]]
+  ↳ app/controllers/areas/cursos_controller.rb:26:in `destroy'
+  [1m[36mCurso Destroy (1.1ms)[0m  [1m[31mDELETE FROM "cursos" WHERE "cursos"."id" = ?[0m  [["id", 19]]
+  ↳ app/controllers/areas/cursos_controller.rb:26:in `destroy'
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/areas/cursos_controller.rb:26:in `destroy'
+Redirected to http://localhost:3000/areas/7/cursos
+Completed 302 Found in 141ms (ActiveRecord: 5.7ms | Allocations: 21961)
+
+
+Started GET "/areas/7/cursos" for ::1 at 2022-04-18 09:53:18 -0500
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.2ms | Allocations: 67)
+  Rendered shared/_izq2.html.erb (Duration: 1.1ms | Allocations: 456)
+  [1m[36mCurso Load (0.2ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ?[0m  [["area_id", 7]]
+  ↳ app/views/shared/_cursos.html.erb:6
+  Rendered collection of areas/cursos/_curso.html.erb [3 times] (Duration: 1.0ms | Allocations: 702)
+  Rendered shared/_cursos.html.erb (Duration: 4.1ms | Allocations: 1562)
+  Rendered areas/cursos/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 2310)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 3558)
+Completed 200 OK in 19ms (Views: 14.5ms | ActiveRecord: 0.5ms | Allocations: 4488)
+
+
+Started DELETE "/areas/7/cursos/20" for ::1 at 2022-04-18 09:53:20 -0500
+Processing by Areas::CursosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "area_id"=>"7", "id"=>"20"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  [1m[36mCurso Load (0.2ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ? AND "cursos"."id" = ? LIMIT ?[0m  [["area_id", 7], ["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:25:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/areas/cursos_controller.rb:26:in `destroy'
+  [1m[36mFicha Load (0.3ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas" INNER JOIN "curso_fichas" ON "fichas"."id" = "curso_fichas"."ficha_id" WHERE "curso_fichas"."curso_id" = ?[0m  [["curso_id", 20]]
+  ↳ app/controllers/areas/cursos_controller.rb:26:in `destroy'
+  [1m[36mCurso Destroy (2.9ms)[0m  [1m[31mDELETE FROM "cursos" WHERE "cursos"."id" = ?[0m  [["id", 20]]
+  ↳ app/controllers/areas/cursos_controller.rb:26:in `destroy'
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/areas/cursos_controller.rb:26:in `destroy'
+Redirected to http://localhost:3000/areas/7/cursos
+Completed 302 Found in 23ms (ActiveRecord: 7.5ms | Allocations: 4239)
+
+
+Started GET "/areas/7/cursos" for ::1 at 2022-04-18 09:53:20 -0500
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.2ms | Allocations: 53)
+  Rendered shared/_izq2.html.erb (Duration: 0.9ms | Allocations: 382)
+  [1m[36mCurso Load (0.2ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ?[0m  [["area_id", 7]]
+  ↳ app/views/shared/_cursos.html.erb:6
+  Rendered collection of areas/cursos/_curso.html.erb [2 times] (Duration: 0.8ms | Allocations: 487)
+  Rendered shared/_cursos.html.erb (Duration: 4.5ms | Allocations: 1304)
+  Rendered areas/cursos/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1958)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 3100)
+Completed 200 OK in 18ms (Views: 14.4ms | ActiveRecord: 0.4ms | Allocations: 3950)
+
+
+  [1m[36mCursoFicha Load (0.2ms)[0m  [1m[34mSELECT "curso_fichas".* FROM "curso_fichas"[0m
+Started GET "/areas/7/cursos/new" for ::1 at 2022-04-18 09:53:43 -0500
+Processing by Areas::CursosController#new as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/new.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.2ms | Allocations: 53)
+  Rendered shared/_izq3.html.erb (Duration: 0.2ms | Allocations: 76)
+  [1m[36mFicha Load (0.2ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas"[0m
+  ↳ app/views/areas/cursos/_form.html.erb:8
+  Rendered areas/cursos/_form.html.erb (Duration: 11.1ms | Allocations: 8683)
+  Rendered areas/cursos/new.html.erb within layouts/application (Duration: 13.0ms | Allocations: 9027)
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 10165)
+Completed 200 OK in 24ms (Views: 19.1ms | ActiveRecord: 0.4ms | Allocations: 11191)
+
+
+Started POST "/areas/7/cursos" for ::1 at 2022-04-18 09:53:49 -0500
+Processing by Areas::CursosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "curso"=>{"nombre_curso"=>"pepe", "ficha_ids"=>["", "1"]}, "commit"=>"Guardar", "area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+[31mUnpermitted parameter: :ficha_ids. Context: { controller: Areas::CursosController, action: create, request: #<ActionDispatch::Request:0x00000238078e14f8>, params: {"authenticity_token"=>"[FILTERED]", "curso"=>{"nombre_curso"=>"pepe", "ficha_ids"=>["", "1"]}, "commit"=>"Guardar", "controller"=>"areas/cursos", "action"=>"create", "area_id"=>"7"} }[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/areas/cursos_controller.rb:17:in `create'
+  [1m[36mCurso Create (1.1ms)[0m  [1m[32mINSERT INTO "cursos" ("area_id", "nombre_curso", "des_curso", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["area_id", 7], ["nombre_curso", "pepe"], ["des_curso", nil], ["created_at", "2022-04-18 14:53:49.091707"], ["updated_at", "2022-04-18 14:53:49.091707"]]
+  ↳ app/controllers/areas/cursos_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/areas/cursos_controller.rb:17:in `create'
+Redirected to http://localhost:3000/areas/7/cursos
+Completed 302 Found in 17ms (ActiveRecord: 5.8ms | Allocations: 3154)
+
+
+Started GET "/areas/7/cursos" for ::1 at 2022-04-18 09:53:49 -0500
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.2ms | Allocations: 53)
+  Rendered shared/_izq2.html.erb (Duration: 1.2ms | Allocations: 369)
+  [1m[36mCurso Load (0.2ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ?[0m  [["area_id", 7]]
+  ↳ app/views/shared/_cursos.html.erb:6
+  Rendered collection of areas/cursos/_curso.html.erb [3 times] (Duration: 1.0ms | Allocations: 696)
+  Rendered shared/_cursos.html.erb (Duration: 3.7ms | Allocations: 1528)
+  Rendered areas/cursos/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 2169)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 3307)
+Completed 200 OK in 16ms (Views: 13.0ms | ActiveRecord: 0.4ms | Allocations: 4157)
+
+
+  [1m[36mCurso Load (0.4ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos"[0m
+  [1m[36mCurso Load (0.3ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mFicha Load (0.4ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas" INNER JOIN "curso_fichas" ON "fichas"."id" = "curso_fichas"."ficha_id" WHERE "curso_fichas"."curso_id" = ?[0m  [["curso_id", 21]]
+  [1m[36mCurso Load (0.3ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mCursoFicha Load (0.4ms)[0m  [1m[34mSELECT "curso_fichas".* FROM "curso_fichas" WHERE "curso_fichas"."curso_id" = ?[0m  [["curso_id", 21]]
+  [1m[36mFicha Load (0.2ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas"[0m
+  [1m[36mCursoFicha Load (0.4ms)[0m  [1m[34mSELECT "curso_fichas".* FROM "curso_fichas"[0m
+Started GET "/fichas" for ::1 at 2022-04-18 09:56:31 -0500
+  
+ActionController::RoutingError (uninitialized constant FichasController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  FichaController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/areas/7/cursos" for ::1 at 2022-04-18 09:57:27 -0500
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.5ms | Allocations: 209)
+  Rendered shared/_izq2.html.erb (Duration: 1.1ms | Allocations: 656)
+  [1m[36mCurso Load (0.2ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ?[0m  [["area_id", 7]]
+  ↳ app/views/shared/_cursos.html.erb:6
+  Rendered collection of areas/cursos/_curso.html.erb [3 times] (Duration: 1.6ms | Allocations: 894)
+  Rendered shared/_cursos.html.erb (Duration: 6.4ms | Allocations: 2027)
+  Rendered areas/cursos/index.html.erb within layouts/application (Duration: 13.3ms | Allocations: 3439)
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 5021)
+Completed 200 OK in 31ms (Views: 26.2ms | ActiveRecord: 0.4ms | Allocations: 6406)
+
+
+Started GET "/fichas/21" for ::1 at 2022-04-18 09:57:29 -0500
+  
+ActionController::RoutingError (uninitialized constant FichasController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  FichaController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/fichas/21" for ::1 at 2022-04-18 09:57:34 -0500
+  
+ActionController::RoutingError (uninitialized constant FichasController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  FichaController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/areas/7/cursos" for ::1 at 2022-04-18 09:57:56 -0500
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.5ms | Allocations: 209)
+  Rendered shared/_izq2.html.erb (Duration: 2.5ms | Allocations: 638)
+  [1m[36mCurso Load (0.2ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ?[0m  [["area_id", 7]]
+  ↳ app/views/shared/_cursos.html.erb:6
+  Rendered collection of areas/cursos/_curso.html.erb [3 times] (Duration: 1.9ms | Allocations: 890)
+  Rendered shared/_cursos.html.erb (Duration: 6.2ms | Allocations: 2023)
+  Rendered areas/cursos/index.html.erb within layouts/application (Duration: 15.3ms | Allocations: 3417)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 4999)
+Completed 200 OK in 30ms (Views: 25.1ms | ActiveRecord: 0.4ms | Allocations: 6418)
+
+
+Started GET "/fichas/21" for ::1 at 2022-04-18 09:57:57 -0500
+  
+ActionController::RoutingError (uninitialized constant FichasController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  FichaController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/areas/7/cursos" for ::1 at 2022-04-18 09:58:08 -0500
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.5ms | Allocations: 209)
+  Rendered shared/_izq2.html.erb (Duration: 2.1ms | Allocations: 665)
+  [1m[36mCurso Load (0.2ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ?[0m  [["area_id", 7]]
+  ↳ app/views/shared/_cursos.html.erb:6
+  Rendered collection of areas/cursos/_curso.html.erb [3 times] (Duration: 2.1ms | Allocations: 2294)
+  Rendered shared/_cursos.html.erb (Duration: 6.5ms | Allocations: 3425)
+  Rendered areas/cursos/index.html.erb within layouts/application (Duration: 15.2ms | Allocations: 4848)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 4942)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.3ms | Allocations: 6334)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :area_id=>"7", :controller=>"fichas"}, missing required keys: [:id]):
+    1: <tr>
+    2:     <td>
+    3:         <%= link_to curso.nombre_curso, ficha_url, method: :get, class:"noblue"%>
+    4:     </td>
+    5:     <td>
+    6:         <%=button_to 'Borrar curso', area_curso_path(@area, curso), method: :delete, form: {data: {turbo_confirm: '¿Estás seguro?' }}, class:"button" %>
+  
+app/views/areas/cursos/_curso.html.erb:3
+app/views/shared/_cursos.html.erb:6
+app/views/areas/cursos/index.html.erb:4
+Started GET "/areas/7/cursos" for ::1 at 2022-04-18 09:58:26 -0500
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.5ms | Allocations: 209)
+  Rendered shared/_izq2.html.erb (Duration: 1.1ms | Allocations: 665)
+  [1m[36mCurso Load (0.2ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ?[0m  [["area_id", 7]]
+  ↳ app/views/shared/_cursos.html.erb:6
+  Rendered collection of areas/cursos/_curso.html.erb [3 times] (Duration: 2.3ms | Allocations: 880)
+  Rendered shared/_cursos.html.erb (Duration: 7.8ms | Allocations: 2013)
+  Rendered areas/cursos/index.html.erb within layouts/application (Duration: 15.0ms | Allocations: 3434)
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 5016)
+Completed 200 OK in 30ms (Views: 25.7ms | ActiveRecord: 0.4ms | Allocations: 6437)
+
+
+Started GET "/fichas" for ::1 at 2022-04-18 09:58:28 -0500
+  
+ActionController::RoutingError (uninitialized constant FichasController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  FichaController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/areas/7/cursos" for ::1 at 2022-04-18 10:00:02 -0500
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.4ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.6ms | Allocations: 209)
+  Rendered shared/_izq2.html.erb (Duration: 1.1ms | Allocations: 641)
+  [1m[36mCurso Load (0.4ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ?[0m  [["area_id", 7]]
+  ↳ app/views/shared/_cursos.html.erb:6
+  Rendered collection of areas/cursos/_curso.html.erb [3 times] (Duration: 1.4ms | Allocations: 842)
+  Rendered shared/_cursos.html.erb (Duration: 7.4ms | Allocations: 1975)
+  Rendered areas/cursos/index.html.erb within layouts/application (Duration: 14.4ms | Allocations: 3372)
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 4954)
+Completed 200 OK in 31ms (Views: 24.9ms | ActiveRecord: 0.8ms | Allocations: 6373)
+
+
+Started GET "/ficha/index" for ::1 at 2022-04-18 10:00:04 -0500
+Processing by FichaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ficha/index.html.erb within layouts/application
+  [1m[36mFicha Load (0.2ms)[0m  [1m[34mSELECT "fichas".* FROM "fichas"[0m
+  ↳ app/views/ficha/index.html.erb:3
+  Rendered ficha/index.html.erb within layouts/application (Duration: 58.4ms | Allocations: 6027)
+  Rendered layout layouts/application.html.erb (Duration: 59.4ms | Allocations: 6121)
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 0.2ms | Allocations: 6928)
+
+
+  
+ActionView::Template::Error (Missing partial fichas/_ficha with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "C:/Users/joymar/Documents/git/v1/app/views"
+  * "C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views"
+  * "C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actiontext-7.0.2.3/app/views"
+  * "C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.2.3/app/views"
+
+Did you mean?  ficha/ficha
+               shared/image
+               shared/image2
+               shared/izq
+               areas/edit
+               areas/show):
+    1: <h1>Ficha#index</h1>
+    2: <p>Find me in app/views/ficha/index.html.erb</p>
+    3: <%= render @fichas %>
+  
+app/views/ficha/index.html.erb:3
+Started GET "/ficha/index" for ::1 at 2022-04-18 10:00:56 -0500
+Processing by FichaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ficha/index.html.erb within layouts/application
+  Rendered ficha/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 154)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 2011)
+Completed 200 OK in 19ms (Views: 15.6ms | ActiveRecord: 0.0ms | Allocations: 2882)
+
+
+Started GET "/ficha/index" for ::1 at 2022-04-18 10:01:12 -0500
+Processing by FichaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ficha/index.html.erb within layouts/application
+  Rendered ficha/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 152)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 1979)
+Completed 200 OK in 19ms (Views: 16.3ms | ActiveRecord: 0.0ms | Allocations: 2846)
+
+
+Started GET "/ficha/index" for ::1 at 2022-04-18 10:01:14 -0500
+Processing by FichaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ficha/index.html.erb within layouts/application
+  Rendered ficha/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 1331)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 1648)
+
+
+Started GET "/ficha/index" for ::1 at 2022-04-18 10:01:15 -0500
+Processing by FichaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ficha/index.html.erb within layouts/application
+  Rendered ficha/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 1352)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 1646)
+
+
+Started GET "/ficha/index" for ::1 at 2022-04-18 10:01:16 -0500
+Processing by FichaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ficha/index.html.erb within layouts/application
+  Rendered ficha/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 1343)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 1637)
+
+
+Started GET "/ficha/index" for ::1 at 2022-04-18 10:01:16 -0500
+Processing by FichaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ficha/index.html.erb within layouts/application
+  Rendered ficha/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 1331)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 1625)
+
+
+Started GET "/ficha/index" for ::1 at 2022-04-18 10:01:16 -0500
+Processing by FichaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ficha/index.html.erb within layouts/application
+  Rendered ficha/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 1325)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 1619)
+
+
+Started GET "/ficha/index" for ::1 at 2022-04-18 10:01:17 -0500
+Processing by FichaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ficha/index.html.erb within layouts/application
+  Rendered ficha/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 1337)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 1631)
+
+
+Started GET "/ficha/index" for ::1 at 2022-04-18 10:01:17 -0500
+Processing by FichaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ficha/index.html.erb within layouts/application
+  Rendered ficha/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 1340)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 1634)
+
+
+Started GET "/ficha/index" for ::1 at 2022-04-18 10:01:17 -0500
+Processing by FichaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ficha/index.html.erb within layouts/application
+  Rendered ficha/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 1349)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 1643)
+
+
+Started GET "/ficha/index" for ::1 at 2022-04-18 10:01:17 -0500
+Processing by FichaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ficha/index.html.erb within layouts/application
+  Rendered ficha/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 1340)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 1634)
+
+
+Started GET "/areas/7/cursos" for ::1 at 2022-04-18 10:01:19 -0500
+Processing by Areas::CursosController#index as HTML
+  Parameters: {"area_id"=>"7"}
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/areas/cursos_controller.rb:52:in `set_area'
+  Rendering layout layouts/application.html.erb
+  Rendering areas/cursos/index.html.erb within layouts/application
+  Rendered shared/_bar.html.erb (Duration: 0.5ms | Allocations: 209)
+  Rendered shared/_izq2.html.erb (Duration: 1.1ms | Allocations: 647)
+  [1m[36mCurso Load (0.2ms)[0m  [1m[34mSELECT "cursos".* FROM "cursos" WHERE "cursos"."area_id" = ?[0m  [["area_id", 7]]
+  ↳ app/views/shared/_cursos.html.erb:6
+  Rendered collection of areas/cursos/_curso.html.erb [3 times] (Duration: 1.6ms | Allocations: 841)
+  Rendered shared/_cursos.html.erb (Duration: 6.4ms | Allocations: 1974)
+  Rendered areas/cursos/index.html.erb within layouts/application (Duration: 13.3ms | Allocations: 3392)
+  Rendered layout layouts/application.html.erb (Duration: 18.9ms | Allocations: 4694)
+Completed 200 OK in 28ms (Views: 23.3ms | ActiveRecord: 0.4ms | Allocations: 5977)
+
+
+Started GET "/ficha/index" for ::1 at 2022-04-18 10:01:20 -0500
+Processing by FichaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ficha/index.html.erb within layouts/application
+  Rendered ficha/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 1342)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 1656)
+
+

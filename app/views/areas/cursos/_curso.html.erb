@@ -1,6 +1,6 @@
 <tr>
     <td>
-        <%= link_to curso.nombre_curso, area_curso_path(@area, curso), class:"noblue"%>
+        <%= link_to curso.nombre_curso, ficha_index_path, method: :get, class:"noblue"%>
     </td>
     <td>
         <%=button_to 'Borrar curso', area_curso_path(@area, curso), method: :delete, form: {data: {turbo_confirm: '¿Estás seguro?' }}, class:"button" %>

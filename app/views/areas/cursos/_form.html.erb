@@ -1,6 +1,11 @@
-<%= form_for [@area, @curso] do |f| %>
+<%= simple_form_for [@area, @curso] do |f| %>
     <div class="field">
         <%= f.text_field :nombre_curso, placeholder:"ingrese nombre del area", class:"in"  ,required:"true"%>
     </div>
-    <%= f.submit "Guardar", class:"bo" %> 
+    
+   
+        <div class="field">
+        <%= f.association :fichas, as: :check_boxes, label_method: :num_ficha %> 
+        </div>
+ <%= f.button :submit, 'guardar', class:"bo"%> 
 <% end %>

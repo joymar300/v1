@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_23_203751) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_13_023616) do
   create_table "areas", force: :cascade do |t|
     t.integer "codigo_area"
     t.string "nombre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "curso_fichas", force: :cascade do |t|
+    t.integer "curso_id", null: false
+    t.integer "ficha_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["curso_id"], name: "index_curso_fichas_on_curso_id"
+    t.index ["ficha_id"], name: "index_curso_fichas_on_ficha_id"
   end
 
   create_table "cursos", force: :cascade do |t|
@@ -25,6 +34,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_23_203751) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["area_id"], name: "index_cursos_on_area_id"
+  end
+
+  create_table "fichas", force: :cascade do |t|
+    t.integer "num_ficha"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -39,5 +54,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_23_203751) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "curso_fichas", "cursos"
+  add_foreign_key "curso_fichas", "fichas"
   add_foreign_key "cursos", "areas"
 end

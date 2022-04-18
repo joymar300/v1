@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'ficha/index'
+  get 'ficha/new'
+  get 'ficha/edit'
 
   devise_for :users
   root to: 'home#index'
@@ -9,6 +12,10 @@ Rails.application.routes.draw do
   resources :cursos
   resources :areas do 
     resources :cursos, module: :areas
+  end
+
+  resources :fichas do
+     resources :curso_fichas, module: :fichas
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

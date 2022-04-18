@@ -9,6 +9,7 @@ before_action :delet_area
   end
   def new
     @curso = @area.cursos.new
+  
   end
 
   def create

@@ -18,6 +18,7 @@ class AreasController < ApplicationController
       render :new
     end
   end
+  
   def edit
     @area = Area.find(params[:id])
   end
