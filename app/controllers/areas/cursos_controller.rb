@@ -1,6 +1,6 @@
 class Areas::CursosController < ApplicationController
 before_action :set_area 
-before_action :delet_area
+
   def index
     @cursos = @area.cursos
   end
@@ -52,11 +52,9 @@ before_action :delet_area
       @area = Area.find(params[:area_id])
     end
 
-    def delet_area
-      @aread = Area.where({:area_id => params[:area_id]})
-    end
+
     def curso_params
-      params.require(:curso).permit(:nombre_curso)
+      params.require(:curso).permit(:nombre_curso, ficha_ids: [])
     end
     
     def curso_params_update

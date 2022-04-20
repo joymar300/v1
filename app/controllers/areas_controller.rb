@@ -1,4 +1,5 @@
 class AreasController < ApplicationController
+  before_action :authenticate_user!
   def index
     @areas = Area.all
   end
@@ -8,6 +9,7 @@ class AreasController < ApplicationController
   
   def new
     @area = Area.new
+    authorize @area
   end
 
   def create
